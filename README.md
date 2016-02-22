@@ -1,9 +1,12 @@
 Hello
 
+## Requirements
+
+  npm install http-server -g
 
 ## Running
 
-  python -m SimpleHTTPServer
+  http-server .
 
   sass --watch style.scss:style.css
 

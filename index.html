@@ -18,7 +18,7 @@
 
 <body id="debateballots">
 
-	<header role="banner">
+	<header role="banner" class="db-hide">
 
 		<a class="brand">Debate Ballots</a>
 
@@ -32,72 +32,174 @@
 
 	</header>
 
-	<main role="main" class="print-page">
-		<section class="printable-score-sheet">
+	<main role="main" class="db-page">
+		<div class="content"><!-- Wrapper for Aspect Ratio -->
 
-			<header class="printable-flex-column"><!-- Basics -->
-				<div class="printable-flex-item">
-					<h2>Scoresheet for NAME</h2>
-				</div>
-				<div class="printable-flex-item">
-					<h4>Round</h4>:
-				</div>
-				<div class="printable-flex-item">
-					<h4>Room</h4>:
-				</div>
-			</header>
+			<section class="db-score-sheet db-flex-column">
 
-			<section>
-				Your Name:
-				Your Are The:
-			</section>
+				<header class="db-header db-margins-m db-flex-row db-flex-item-fhm"><!-- Basics -->
+					<div class="db-align-vertical-end db-flex-item-3">
+						<h2>Scoresheet for {{ tournamentName }}</h2>
+					</div>
+					<div class="db-flex-item-1 db-flex-row db-padding-horizontal">
+						<div class="db-align-vertical-end db-flex-item db-flex-static db-vertical-center-text">
+							<h2>Round:</h2>
+						</div>
+						<div class="db-flex-item db-fill-in">
+						</div>
+					</div>
+					<div class="db-flex-item-1 db-flex-row db-padding-horizontal">
+						<div class="db-align-vertical-end db-flex-item db-flex-static db-vertical-center-text">
+							<h2>Room:</h2>
+						</div>
+						<div class="db-flex-item db-fill-in">
+						</div>
+					</div>
+				</header>
 
-			<section class="printable-flex-column">
-				<div class="printable-flex-item" v-for="n in teams"><!-- Aff holder -->
+				<section class="db-margins-m db-bordered db-flex-row db-flex-item-fhm">
 
-					<div class="printable-flex-column"><!-- Speaker holder -->
-						<div class-"printable-flex-item">
+					<div class="db-padding-horizontal db-flex-item-1 db-flex-row"><!-- Aff holder -->
+						<div class="db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
+							Your Name is:
+						</div>
+						<div class="db-flex-item db-fill-in ">
+						</div>
+					</div>
+
+					<div class="db-padding-horizontal db-flex-item-1 db-flex-row"><!-- Aff holder -->
+						<div class="db-align-vertical-center db-padding-horizontal db-flex-item db-flex-static db-vertical-center-text">
+							I was:
+						</div>
+						<div class="db-flex-item db-flex-row">
+							<div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+								<span class="db-fill-in">The Chair</span>
 							</div>
-						<div class-"printable-flex-item">
-							Pronoun
-						</div>
-						<div class-"printable-flex-item">
-							Full Name
-						</div>
-						<div class-"printable-flex-item">
-							Score (x to y)
+							<div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+								<span class="db-fill-in">A Panellist</span>
+							</div>
+							<div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+								<span class="db-fill-in">A Trainee</span>
+							</div>
 						</div>
 					</div>
 
-					<div class="printable-flex-column" v-for="n in speakers"><!-- Speaker holder -->
-						<div class-"printable-flex-item">
-							{{ n }}.
+				</section>
+
+				<section class="db-flex-row db-flex-item">
+
+					<div class="db-flex-column db-margins-m db-bordered db-flex-item" v-for="n in teamsCount"><!-- Aff holder -->
+
+						<div class="db-flex-item db-flex-row"><!-- Keys -->
+							<div class="db-padding-horizontal db-flex-item db-align-vertical-center db-flex-static db-right-text">
+							  <span v-if="teamsCount === 2 && n === 0">Affirmative Team:</span>
+								<span v-if="teamsCount === 2 && n === 1">Affirmative Team:</span>
+								<span v-if="teamsCount === 4 && n === 0">Opening Government's Team:</span>
+								<span v-if="teamsCount === 4 && n === 1">Opening Opposition's Team:</span>
+								<span v-if="teamsCount === 4 && n === 2">Closing Government's Team:</span>
+								<span v-if="teamsCount === 4 && n === 3">Closing Opposition's Team:</span> 
+							</div>
+							<div class="db-fill-in db-flex-item">
+							</div>
 						</div>
-						<div class-"printable-flex-item">
-							Pronoun here
+
+						<div class="db-flex-item db-flex-row"><!-- Keys -->
+							<div class=" db-flex-item-fws">
+							</div>
+							<div class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item-fwm">
+								Pronoun
+							</div>
+							<div class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item">
+								Speaker's Full Name
+							</div>
+							<div class="db-align-horizontal-center db-align-vertical-center db-flex-item-fwm">
+								Score<br> (x to y)
+							</div>
 						</div>
-						<div class-"printable-flex-item">
-							Name here
+
+						<div class="db-flex-item db-flex-row" v-for="n in speakersCount"><!-- Speakers -->
+							<div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
+								{{ n }}.
+							</div>
+							<div class="db-padding-horizontal db-fill-in  db-flex-item-fwm">
+							</div>
+							<div class="db-padding-horizontal db-fill-in  db-flex-item">
+							</div>
+							<div class="db-fill-in  db-flex-item-fwm">
+							</div>
 						</div>
-						<div class-"printable-flex-item">
-							Speaks here
+
+						<div class="db-flex-item db-flex-row"><!-- Speakers -->
+							<div class="db-flex-item">
+							</div>
+							<div class="db-right-text db-flex-item-fwl db-align-vertical-center db-static">
+								Total Score:
+							</div>
+							<div class="db-fill-in db-flex-item-fwm">
+							</div>
+						</div>
+
+					</div>
+
+				</section>
+
+				<section class="db-margins-m db-bordered db-flex-row db-flex-item-1 db-flex-item-fhm">
+
+					<div class="db-padding-horizontal db-flex-item-1 db-flex-row"><!-- Aff holder -->
+						<div class="db-flex-item db-align-vertical-center db-flex-static db-vertical-center-text">
+							Which team won the debate?
+						</div>
+						<div class="db-flex-item db-fill-in ">
 						</div>
 					</div>
 
-				</div>
-				<div class=""><!-- Neg holder -->
+					<div class="db-padding-horizontal db-flex-item-1 db-flex-row"><!-- Aff holder -->
+						<div class="db-padding-horizontal db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
+							By how many points did they win?
+						</div>
+						<div class="db-flex-item db-fill-in ">
+						</div>
+					</div>
 
+				</section>
 
-				</div>
+				<section class="db-dont-fill-in db-margins-m db-bordered db-flex-row db-flex-item-1 db-flex-item-fhm">
+
+					<div class="db-padding-horizontal db-align-vertical-center db-flex-static db-flex-item db-flex-row  db-vertical-center-text"><!-- Aff holder -->
+						Return Ballots to [insert here]
+					</div>
+
+					<div class="db-padding-horizontal db-align-vertical-center db-flex-item db-flex-static db-flex-row  db-vertical-center-text"><!-- Aff holder -->
+							For the tab room only:
+					</div>
+
+					<div class="db-flex-item db-flex-row  db-vertical-center-text"><!-- Aff holder -->
+						<div class="db-flex-item db-flex-static db-align-vertical-center">
+							Entered By
+						</div>
+						<div class="db-flex-item db-fill-in ">
+						</div>
+					</div>
+
+					<div class="db-flex-item db-flex-row"><!-- Aff holder -->
+						<div class="db-flex-item db-flex-static db-align-vertical-center">
+							Checked By
+						</div>
+						<div class="db-flex-item db-fill-in ">
+						</div>
+					</div>
+
+				</section>
+
 			</section>
 
+			<div class="db-hide db-page-type"><h4>A3</h4></div>
 
-		</section>
-
+		</div>
 	</main>
 	<!-- End primary page content -->
 
-	<aside role="complementary">
+	<aside role="complementary" class="db-hide">
 
 		<h3>Secondary page content</h3>
 
@@ -105,7 +207,7 @@
 
 	</aside>
 
-	<footer role="contentinfo">
+	<footer role="contentinfo" class="db-hide">
 
 		<div>Check out Tabbycat. Feedback/suggestions over here: github link</div>
 
@@ -114,13 +216,14 @@
 	</footer>
 
 
-  <script src="/vue.js"></script>
+  <script src="/bower_components/vue/dist/vue.js"></script>
   <script>
 		new Vue({
 			el: '#debateballots',
 			data: {
-			  speakers: 3,
-			  teams: 2
+				tournamentName: "Australs",
+			  speakersCount: 3,
+			  teamsCount: 2
 			}
 		})
 	</script>
