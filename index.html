@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Debate Ballots - one stop shop for printable ballots and forms</title>
+
+	<meta name="description" content="">
+
+	<!-- Mobile-friendly viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Style sheet link -->
+	<link href="/style.css" rel="stylesheet" media="all">
+
+</head>
+
+<body id="debateballots">
+
+	<header role="banner">
+
+		<a class="brand">Debate Ballots</a>
+
+		<nav role="navigation">
+			<ul class="navbar">
+				<li><a href="#">Scoresheet for 4-team</a></li>
+				<li><a href="#">Scoresheet for  2</a></li>
+				<li><a href="#">Feedback Sheet</a></li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main role="main" class="print-page">
+		<section class="printable-score-sheet">
+
+			<header class="printable-flex-column"><!-- Basics -->
+				<div class="printable-flex-item">
+					<h2>Scoresheet for NAME</h2>
+				</div>
+				<div class="printable-flex-item">
+					<h4>Round</h4>:
+				</div>
+				<div class="printable-flex-item">
+					<h4>Room</h4>:
+				</div>
+			</header>
+
+			<section>
+				Your Name:
+				Your Are The:
+			</section>
+
+			<section class="printable-flex-column">
+				<div class="printable-flex-item" v-for="n in teams"><!-- Aff holder -->
+
+					<div class="printable-flex-column"><!-- Speaker holder -->
+						<div class-"printable-flex-item">
+							</div>
+						<div class-"printable-flex-item">
+							Pronoun
+						</div>
+						<div class-"printable-flex-item">
+							Full Name
+						</div>
+						<div class-"printable-flex-item">
+							Score (x to y)
+						</div>
+					</div>
+
+					<div class="printable-flex-column" v-for="n in speakers"><!-- Speaker holder -->
+						<div class-"printable-flex-item">
+							{{ n }}.
+						</div>
+						<div class-"printable-flex-item">
+							Pronoun here
+						</div>
+						<div class-"printable-flex-item">
+							Name here
+						</div>
+						<div class-"printable-flex-item">
+							Speaks here
+						</div>
+					</div>
+
+				</div>
+				<div class=""><!-- Neg holder -->
+
+
+				</div>
+			</section>
+
+
+		</section>
+
+	</main>
+	<!-- End primary page content -->
+
+	<aside role="complementary">
+
+		<h3>Secondary page content</h3>
+
+		<p>Use the <code>aside</code> element if you need to include content that is not central to the focus of the page or is clearly of secondary importance.</p>
+
+	</aside>
+
+	<footer role="contentinfo">
+
+		<div>Check out Tabbycat. Feedback/suggestions over here: github link</div>
+
+		<small>Copyright &copy; <time datetime="2013">2013</time></small>
+
+	</footer>
+
+
+  <script src="/vue.js"></script>
+  <script>
+		new Vue({
+			el: '#debateballots',
+			data: {
+			  speakers: 3,
+			  teams: 2
+			}
+		})
+	</script>
+
+</body>
+
+</html>

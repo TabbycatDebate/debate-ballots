@@ -1,0 +1,40 @@
+// MIXINS
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+// BASICS
+body {
+  background: #ccc;
+}
+.print-page {
+  background: #fff;
+  border: 1px solid #666;
+  @include aspect-ratio(16, 9);
+}
+
+.printable-flex-column {
+  display: flex;
+	flex-direction: row;
+}
+.printable-flex-row {
+  display: flex;
+	flex-direction: row;
+}
+.printable-flex-item {
+  flex: auto;
+}
