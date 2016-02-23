@@ -14,11 +14,6 @@
     bottom: 0;
   }
 }
-.db-page-holder {
-  width: 66%;
-  height: 100%;
-  float: left;
-}
 .db-sidebar {
   width: 30%;
   height: 100%;
@@ -27,10 +22,13 @@
   top: 0;
   background: #fff;
 }
-
+.db-page-holder {
+  width: 66%;
+  height: 100%;
+  float: left;
+}
 .db-page {
   background: #fff;
-  border: 1px solid #666;
   @include aspect-ratio(1.414, 1);
 }
 .db-score-sheet {
