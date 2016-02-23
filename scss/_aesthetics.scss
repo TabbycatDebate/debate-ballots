@@ -1,0 +1,14 @@
+// AESTHETICS
+body {
+  background: #ccc;
+}
+.db-fill-in {
+  border-bottom: 3px solid $fill-in-color;
+}
+.db-bordered {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.db-dont-fill-in {
+  background: $dont-fill-in-bg;
+}

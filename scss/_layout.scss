@@ -1,0 +1,55 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.db-page-holder {
+  width: 66%;
+  height: 100%;
+  float: left;
+}
+.db-sidebar {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+}
+
+.db-page {
+  background: #fff;
+  border: 1px solid #666;
+  @include aspect-ratio(1.414, 1);
+}
+.db-score-sheet {
+  height: 100%; // Fill available space
+}
+
+// PADDING
+.db-padding-horizontal {
+  margin: 0 10px 0 10px;
+}
+.db-margins-m {
+  margin: 0px 10px 10px 10px;
+}
+.db-header {
+  margin-bottom: 30px;
+}
+// MISC
+.db-page-type {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+}
