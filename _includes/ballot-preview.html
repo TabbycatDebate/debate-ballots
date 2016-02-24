@@ -55,13 +55,21 @@
         </section>
 
         <section class="db-flex-row db-flex-item">
-
-          <div class="db-flex-column db-margins-m db-bordered db-flex-item-half" v-for="n in teamsCountInt">
-
+          <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
             <db-team-sheet></db-team-sheet>
-
           </div>
+          <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+            <db-team-sheet></db-team-sheet>
+          </div>
+        </section>
 
+        <section class="db-flex-row db-flex-item" v-if="teamsCountInt === 4">
+          <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+            <db-team-sheet></db-team-sheet>
+          </div>
+          <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+            <db-team-sheet></db-team-sheet>
+          </div>
         </section>
 
         <section class="db-margins-m db-bordered db-flex-row db-flex-item-1 db-flex-item-fhm">

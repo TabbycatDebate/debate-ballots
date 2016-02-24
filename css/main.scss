@@ -5,10 +5,10 @@
 
 
 // NORMALIZE
-// @import "bower_components/normalize-scss/sass/normalize/normalize-mixin";
-// @import "bower_components/normalize-scss/sass/normalize/variables";
-// @import "bower_components/normalize-scss/sass/normalize/vertical-rhythm";
-// @include normalize();
+@import "../bower_components/normalize-scss/sass/normalize/normalize-mixin";
+@import "../bower_components/normalize-scss/sass/normalize/variables";
+@import "../bower_components/normalize-scss/sass/normalize/vertical-rhythm";
+@include normalize();
 
 // VARIABLES
 $fill-in-color: #ccc;

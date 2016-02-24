@@ -1,4 +1,3 @@
-<!-- Team Score Sheet Template -->
 <script type="text/x-template" id="db-team-sheet">
 
   <div class="db-flex-item db-flex-row">
@@ -24,13 +23,13 @@
       Speaker's Full Name
     </div>
     <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-fwm">
-      Score<br> ({{ lowestSpeak }}-{{ highestSpeak }})
+      Score<br> ([[ lowestSpeak ]]-[[ highestSpeak ]])
     </div>
   </div>
 
   <div class="db-flex-item db-flex-row" v-for="n in speakersCount"><!-- Speakers -->
     <div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
-      {{ n + 1 }}.
+      [[ n + 1 ]].
     </div>
     <div v-show="showPronouns" class="db-padding-horizontal db-fill-in  db-flex-item-fwm">
     </div>
@@ -69,7 +68,13 @@
   Vue.component('db-team-sheet', {
     template: '#db-team-sheet',
     props: {
-
+      n: Number,
+      teamsCount: Number,
+      speakersCount: Number,
+      showPronouns: Boolean,
+      hasReplies: hasReplies,
+      lowestSpeak: Number,
+      highestSpeak: Number
     },
   })
 </script>
