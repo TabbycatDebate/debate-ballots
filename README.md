@@ -1,13 +1,18 @@
 Hello
 
-## Requirements
+## Installation
 
-  npm install http-server -g
+Setup commands
 
-## Running
+    npm install http-server -g
+    bower install debatingballots
 
-  http-server .
+## Serving
 
-  sass --watch style.scss:style.css
+Running commands
 
-  livereload .
+    http-server .
+    sass --watch style.scss:style.css
+    livereload .
+
+## Deployment
