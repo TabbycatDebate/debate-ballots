@@ -1,0 +1,14 @@
+@media print {
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  .db-page { // Hide the pseudo page
+    border: none;
+    background: none;
+    margin: 0;
+  }
+  .db-hide {
+    display: none;
+  }
+}
