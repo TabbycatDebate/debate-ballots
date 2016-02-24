@@ -1,0 +1,25 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+// NORMALIZE
+// @import "bower_components/normalize-scss/sass/normalize/normalize-mixin";
+// @import "bower_components/normalize-scss/sass/normalize/variables";
+// @import "bower_components/normalize-scss/sass/normalize/vertical-rhythm";
+// @include normalize();
+
+// VARIABLES
+$fill-in-color: #ccc;
+$dont-fill-in-bg: #f6f6f6;
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  "aesthetics",
+  "type",
+  "layout",
+  "sidebar",
+  "flex-aligns",
+  "print"
+;
