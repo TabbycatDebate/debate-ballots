@@ -2,19 +2,23 @@
 
   <div class="db-flex-item db-flex-row">
     <div class="db-padding-horizontal db-flex-item db-align-vertical-center db-flex-static db-right-text">
-      <span v-if="teamsCountInt === 2 && n === 0">Affirmative Team:</span>
-      <span v-if="teamsCountInt === 2 && n === 1">Negative Team:</span>
-      <span v-if="teamsCountInt === 4 && n === 0">Opening Government's Team:</span>
-      <span v-if="teamsCountInt === 4 && n === 1">Opening Opposition's Team:</span>
-      <span v-if="teamsCountInt === 4 && n === 2">Closing Government's Team:</span>
-      <span v-if="teamsCountInt === 4 && n === 3">Closing Opposition's Team:</span>
+      <template v-if="teamsCount == 2">
+        <span v-if="n === 0">Affirmative Team:</span>
+        <span v-if="n === 1">Negative Team:</span>
+      </template>
+      <template v-if="teamsCount == 4">
+        <span v-if="n === 0">Opening Government's Team:</span>
+        <span v-if="n === 1">Opening Opposition's Team:</span>
+        <span v-if="n === 2">Closing Government's Team:</span>
+        <span v-if="n === 3">Closing Opposition's Team:</span>
+      </template>
     </div>
     <div class="db-fill-in db-flex-item">
     </div>
   </div>
 
   <div class="db-flex-item db-flex-row"><!-- Keys -->
-    <div class=" db-flex-item-fws">
+    <div class="db-flex-item-fws">
     </div>
     <div v-show="showPronouns" class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item-fwm">
       Pronoun
@@ -31,7 +35,7 @@
     <div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
       [[ n + 1 ]].
     </div>
-    <div v-show="showPronouns" class="db-padding-horizontal db-fill-in  db-flex-item-fwm">
+    <div v-show="showPronouns" class="db-padding-horizontal db-fill-in db-flex-item-fwm">
     </div>
     <div class="db-padding-horizontal db-fill-in  db-flex-item">
     </div>
@@ -69,10 +73,10 @@
     template: '#db-team-sheet',
     props: {
       n: Number,
-      teamsCount: Number,
+      teamsCount: String,
       speakersCount: Number,
       showPronouns: Boolean,
-      hasReplies: hasReplies,
+      hasReplies: Boolean,
       lowestSpeak: Number,
       highestSpeak: Number
     },
