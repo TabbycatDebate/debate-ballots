@@ -1,1 +1,44 @@
 // FORM ELEMENTS
+.db-sidebar {
+  input, button {
+
+  }
+  button {
+    background: #fff;
+    border: 1px solid blue;
+    display: inline-block;
+    padding: .375rem 1rem;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid #ccc;
+    border-radius: .25rem
+  }
+  .active {
+    background: green;
+    color: #fff;
+  }
+  .hidden {
+    display: none;
+  }
+  .toggle-btn {
+    display: inline-block;
+    float: left;
+    width: 50%;
+    &.left {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.right {
+      border-left: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

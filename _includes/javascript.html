@@ -5,6 +5,8 @@
   new Vue({
     el: '#debateballots',
     data: {
+      // type
+      showFeedback: true,
       // Strings to Fill In
       tournamentName: "Tournament Name",
       returnLocation: "Tab Room Location",
@@ -13,7 +15,7 @@
       // Rules
       hasReplies: false,
       speakersCount: 3,
-      teamsCount: "2",
+      isBP: false,
       lowestSpeak: 68,
       highestSpeak: 82,
       // Formatting
@@ -32,6 +34,23 @@
       teamsCountInt: function () {
         return parseInt(this.teamsCount);
       },
+    },
+    methods: {
+      setFeedbackFalse: function() {
+        this.showFeedback = false;
+        document.title = "debatingballot.com — Score Sheet for " + this.tournamentName;
+      },
+      setFeedbackTrue: function() {
+        this.showFeedback = true;
+        document.title = "debatingballot.com — Feedback Sheet for " + this.tournamentName;
+      },
+      setBPFalse: function() {
+        this.isBP = false;
+      },
+      setBPTrue: function() {
+        this.isBP = true;
+      },
+
     }
   })
 </script>

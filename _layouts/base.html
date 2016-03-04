@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Debate Ballots - one stop shop for printable ballots and forms</title>
+	<title>debatingballot.com — printable ballots, score sheets, and feedback forms for debating tournaments</title>
 
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,16 @@
 
   {% include sidebar.html %}
 
-  {% include ballot-preview.html %}
+	<div class="db-page-holder">
+	  <main role="main" class="db-page" v-bind:class="pageOrientationClass">
+			<template v-if="showFeedback === true">
+				{% include feedback-preview.html %}
+			</template>
+			<template v-if="showFeedback === false">
+				{% include ballot-preview.html %}
+			</template>
+		</main>
+	</div>
 
   {% include javascript.html %}
 
