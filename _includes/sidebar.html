@@ -1,38 +1,43 @@
 <aside role="complementary" class="db-sidebar db-hide">
   <div class="db-margins-m">
-    <h2>Ballot Configuration</h2>
-    <button>British Parliamentary</button>
-    <button>Australs</button>
-    <button>Australs without Replies</button>
+
+    <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': showFeedback === false }" class="toggle-btn left">Score Sheet</button>
+    <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback === true }" class="toggle-btn right">Feedback Sheet</button>
+    <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
+
+    <button v-on:click="setBPFalse" v-bind:class="{ 'active': isBP === false }" class="toggle-btn left">Two Teams</button>
+    <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP === true }" class="toggle-btn right">Four Teams</button>
+
     <input type="text" id="tournamentNameText" v-model="tournamentName">
-    <label for="tournamentNameText">[[ checked ]]</label>
-    <hr>
     <input type="text" id="returnLocationText" v-model="returnLocation">
-    <label for="returnLocationText">[[ returnLocation ]]</label>
-    <hr>
-    <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
-    <label for="hasRepliesCheck">Has Replies</label>
-    <hr>
-    <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
-    <label for="showPronounsCheck">Show Pronouns</label>
-    <hr>
-    <input type="radio" id="two" value="2" v-model="teamsCount">
-    <label for="two">Two Teams</label>
-    <input type="radio" id="four" value="4" v-model="teamsCount">
-    <label for="four">Four Teams</label>
-    <hr>
+
     <input type="radio" id="portraitOrientationRadio" value="portrait" v-model="pageOrientation">
     <label for="portraitOrientationRadio">portrait</label>
     <input type="radio" id="landscapeOrientationRadio" value="landscape" v-model="pageOrientation">
     <label for="landscapeOrientationRadio">landscape</label>
-    <hr>
-    <input type="number" id="lowestSpeakInput" v-model="lowestSpeak">
-    <label for="lowestSpeakInput">Range Minimum</label>
-    <hr>
-    <input type="number" id="highestSpeakInput" v-model="highestSpeak">
-    <label for="highestSpeakInput">Range Maximum</label>
-    <hr>
-    <h3>How to Print</h3>
-    <p>Lorum</p>
-  </div>
+
+    <template v-if="showFeedback === true">
+
+    </template>
+    <template v-if="showFeedback === false">
+      <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
+      <label for="hasRepliesCheck">Has Replies</label>
+      <hr>
+      <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
+      <label for="showPronounsCheck">Show Pronouns</label>
+      <hr>
+      <hr>
+      <label for="lowestSpeakInput">Range Minimum</label>
+      <input type="number" id="lowestSpeakInput" v-model="lowestSpeak">
+      <hr>
+      <label for="highestSpeakInput">Range Maximum</label>
+      <input type="number" id="highestSpeakInput" v-model="highestSpeak">
+    </div>
+    <h2>How to Print/Save</h2>
+    <p>For best results, use Chrome or Safari. Use your browser's print function (CTRL-P), set paper sized and orientations appropriately along with:</p>
+    <ul>
+      <li>Margins: None</li>
+      <li>Background graphics: ✅</li>
+    </ul>
+  </template>
 </aside>

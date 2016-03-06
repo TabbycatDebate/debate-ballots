@@ -3,10 +3,29 @@
     margin: 0;
     padding: 0;
   }
-  .db-page { // Hide the pseudo page
+  .db-page-holder {
+    display: block;
+  }
+  .db-page {
+    transform: none;
     border: none;
     background: none;
-    margin: 0;
+    box-shadow: none;
+  }
+  .db-score-sheet {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .db-page-portrait .db-score-sheet {
+    width: auto;
+    height: auto;
+  }
+  .db-page-landscape .db-score-sheet {
+    width: auto;
+    height: auto;
   }
   .db-hide {
     display: none;
