@@ -1,7 +1,4 @@
 // AESTHETICS
-.db-page {
-  box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
-}
 .db-fill-in {
   border-bottom: 3px solid $fill-in-color;
 }
@@ -14,4 +11,8 @@
 }
 .db-dont-fill-in {
   background: $dont-fill-in-bg;
+}
+.db-page {
+  box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+  background: #fff;
 }

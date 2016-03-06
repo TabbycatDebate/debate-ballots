@@ -16,10 +16,15 @@ $dont-fill-in-bg: #f6f6f6;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-  "type",
-  "layout",
-  "sidebar",
-  "flex-aligns",
-  "print"
-  "debating-ballots"
+  "interface",
+  "forms"
+;
+
+// Import just ballot related stuff
+@import
+  "db/aesthetics",
+  "db/type",
+  "db/layout",
+  "db/flex-aligns",
+  "db/print"
 ;

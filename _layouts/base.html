@@ -16,15 +16,17 @@
 
   {% include sidebar.html %}
 
-	<div class="db-page-holder">
-	  <main role="main" class="db-page" v-bind:class="pageOrientationClass">
-			<template v-if="showFeedback === true">
-				{% include feedback-preview.html %}
-			</template>
-			<template v-if="showFeedback === false">
-				{% include ballot-preview.html %}
-			</template>
-		</main>
+	<div class="dbui-preview">
+		<div class="db-page-holder">
+		  <main role="main" class="db-page" v-bind:class="pageOrientationClass">
+				<template v-if="showFeedback === true">
+					{% include feedback-preview.html %}
+				</template>
+				<template v-if="showFeedback === false">
+					{% include ballot-preview.html %}
+				</template>
+			</main>
+		</div>
 	</div>
 
   {% include javascript.html %}

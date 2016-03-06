@@ -1,4 +1,4 @@
-<aside role="complementary" class="db-sidebar db-hide">
+<aside role="complementary" class="dbui-sidebar db-hide">
   <div class="db-margins-m">
 
     <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': showFeedback === false }" class="toggle-btn left">Score Sheet</button>
@@ -33,11 +33,13 @@
       <label for="highestSpeakInput">Range Maximum</label>
       <input type="number" id="highestSpeakInput" v-model="highestSpeak">
     </div>
-    <h2>How to Print/Save</h2>
-    <p>For best results, use Chrome or Safari. Use your browser's print function (CTRL-P), set paper sized and orientations appropriately along with:</p>
-    <ul>
-      <li>Margins: None</li>
-      <li>Background graphics: ✅</li>
-    </ul>
   </template>
+
+  <h2>How to Print/Save</h2>
+  <p>For best results, use Chrome or Safari. Use your browser's print function (CTRL-P), set paper sized and orientations appropriately along with:</p>
+  <ul>
+    <li>Margins: None</li>
+    <li>Background graphics: ✅</li>
+  </ul>
+
 </aside>

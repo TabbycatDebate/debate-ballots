@@ -1,26 +1,6 @@
 // OVERALL
-body {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.db-sidebar {
-  flex: 0 0 350px;
-  padding: 5% 10px;
-  background: #fff;
-}
 .db-page-holder {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.db-page {
-  background: #fff;
+  display: flex; // Needed for contents
 }
 .db-page-portrait {
   transform: scale(0.5);
