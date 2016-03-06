@@ -6,7 +6,7 @@
         <span v-if="n === 0">Affirmative Team:</span>
         <span v-if="n === 1">Negative Team:</span>
       </template>
-      <template v-if="teamsCount === true">
+      <template v-if="isBP === true">
         <span v-if="n === 0">Opening Government:</span>
         <span v-if="n === 1">Opening Opposition:</span>
         <span v-if="n === 2">Closing Government:</span>

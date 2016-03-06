@@ -14,21 +14,24 @@
 
 <body id="debateballots">
 
-  {% include sidebar.html %}
+	<div class="dbui-wrapper">
 
-	<div class="dbui-preview">
-		<div class="db-page-holder">
-		  <main role="main" class="db-page" v-bind:class="pageOrientationClass">
-				<template v-if="showFeedback === true">
-					{% include feedback-preview.html %}
-				</template>
-				<template v-if="showFeedback === false">
-					{% include ballot-preview.html %}
-				</template>
-			</main>
+	  {% include sidebar.html %}
+
+		<div class="dbui-preview">
+			<div class="db-page-holder">
+			  <main role="main" class="db-page" v-bind:class="pageOrientationClass">
+					<template v-if="showFeedback === true">
+						{% include feedback-preview.html %}
+					</template>
+					<template v-if="showFeedback === false">
+						{% include ballot-preview.html %}
+					</template>
+				</main>
+			</div>
 		</div>
-	</div>
 
+	</div>
   {% include javascript.html %}
 
 </body>
