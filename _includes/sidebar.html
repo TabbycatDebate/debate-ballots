@@ -10,10 +10,15 @@
   <input type="text" id="tournamentNameText" v-model="tournamentName">
   <input type="text" id="returnLocationText" v-model="returnLocation">
 
+  <hr>
   <input type="radio" id="portraitOrientationRadio" value="portrait" v-model="pageOrientation">
   <label for="portraitOrientationRadio">portrait</label>
   <input type="radio" id="landscapeOrientationRadio" value="landscape" v-model="pageOrientation">
   <label for="landscapeOrientationRadio">landscape</label>
+  <hr>
+  <input type="checkbox" id="doubleUpCheck" v-model="doubleUp">
+  <label for="doubleUpCheck">Double Up</label>
+  <hr>
 
   <template v-if="showFeedback === true">
 
@@ -24,7 +29,6 @@
     <hr>
     <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
     <label for="showPronounsCheck">Show Pronouns</label>
-    <hr>
     <hr>
     <label for="lowestSpeakInput">Range Minimum</label>
     <input type="number" id="lowestSpeakInput" v-model="lowestSpeak">

@@ -59,15 +59,28 @@
     transform: scale(1.5);
   }
 }
-
-
-.db-page-portrait .db-score-sheet {
+.db-page-portrait, {
   height: 297mm;
   width: 210mm;
+  &.db-page-single .db-score-sheet {
+    height: 100%;
+  }
+  &.db-page-double .db-score-sheet {
+    width: 100%;
+    height: 50%;
+  }
 }
-.db-page-landscape .db-score-sheet {
+.db-page-landscape {
   width: 297mm;
   height: 210mm;
+  &.db-page-single .db-score-sheet {
+    height: 100%;
+  }
+  &.db-page-double .db-score-sheet {
+    width: 50%;
+    height: 100%;
+    float: left;
+  }
 }
 // PADDING
 .db-padding-horizontal {
@@ -75,9 +88,6 @@
 }
 .db-margins-m {
   margin: 0px 15px 15px 15px;
-}
-.db-header {
-  margin-bottom: 30px;
 }
 // ELEMENTS
 .db-flex-item {

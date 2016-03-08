@@ -5,8 +5,8 @@
   new Vue({
     el: '#debateballots',
     data: {
-      // type
-      showFeedback: true,
+      // Type
+      showFeedback: false,
       // Strings to Fill In
       tournamentName: "Tournament Name",
       returnLocation: "Tab Room Location",
@@ -22,6 +22,7 @@
       showTabRoomRow: true,
       pageOrientation: 'landscape',
       showPronouns: true,
+      doubleUp: false,
     },
     computed: {
       pageOrientationClass: function () {
@@ -29,6 +30,13 @@
           return "db-page-portrait";
         } else {
           return "db-page-landscape";
+        }
+      },
+      pageDoublingClass: function () {
+        if (this.doubleUp === true) {
+          return "db-page-double";
+        } else {
+          return "db-page-single";
         }
       },
       teamsCountInt: function () {

@@ -20,12 +20,18 @@
 
 		<div class="dbui-preview">
 			<div class="db-page-holder">
-			  <main role="main" class="db-page" v-bind:class="pageOrientationClass">
+			  <main role="main" class="db-page" v-bind:class="[pageOrientationClass, pageDoublingClass]">
 					<template v-if="showFeedback === true">
 						{% include feedback-preview.html %}
+						<template v-if="doubleUp === true">
+							{% include feedback-preview.html %}
+						</template>
 					</template>
 					<template v-if="showFeedback === false">
 						{% include ballot-preview.html %}
+						<template v-if="doubleUp === true">
+							{% include ballot-preview.html %}
+						</template>
 					</template>
 				</main>
 			</div>

@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="db-flex-item db-flex-row db-bottom-border db-dont-fill-in"><!-- Keys -->
+  <div class="db-flex-item db-flex-row db-bottom-border db-flex-item-fhm db-dont-fill-in"><!-- Keys -->
     <div class="db-flex-item-fws">
     </div>
     <div v-show="showPronouns" class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item-fwl">
