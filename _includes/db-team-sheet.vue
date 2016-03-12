@@ -1,6 +1,6 @@
 <script type="text/x-template" id="db-team-sheet">
 
-  <div class="db-flex-item db-flex-row db-bottom-border">
+  <div class="db-flex-item-2 db-flex-row db-bottom-border">
     <div class="db-padding-horizontal db-flex-item db-align-vertical-center db-flex-static db-right-text">
       <template v-if="isBP === false">
         <span v-if="n === 0">Affirmative Team:</span>
@@ -17,21 +17,21 @@
     </div>
   </div>
 
-  <div class="db-flex-item db-flex-row db-bottom-border db-flex-item-fhm db-dont-fill-in"><!-- Keys -->
+  <div class="db-flex-item db-flex-row db-bottom-border db-flex-item-1 db-dont-fill-in"><!-- Keys -->
     <div class="db-flex-item-fws">
     </div>
-    <div v-show="showPronouns" class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item-fwl">
-      Speaker's Pronoun
+    <div v-show="showPronouns" class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-left-text" db-flex-item-fwl">
+      Pronoun
     </div>
     <div class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item  db-center-text">
-      Speaker's <br>Full Name
+      Full Name
     </div>
     <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-fwl db-center-text">
-      Score<br> ([[ lowestSpeak ]]-[[ highestSpeak ]])
+      Score
     </div>
   </div>
 
-  <div class="db-flex-item db-flex-row db-bottom-border" v-for="n in speakersCount"><!-- Speakers -->
+  <div class="db-flex-item-2 db-flex-row db-bottom-border" v-for="n in speakersCount"><!-- Speakers -->
     <div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
       [[ n + 1 ]].
     </div>
@@ -39,11 +39,11 @@
     </div>
     <div class="db-padding-horizontal db-fill-in  db-flex-item">
     </div>
-    <div class="db-fill-in db-flex-item-fwl">
+    <div class="db-padding-horizontal db-fill-in db-flex-item-fwl">
     </div>
   </div>
 
-  <div class="db-flex-item db-flex-row db-bottom-border" v-show="hasReplies"><!-- Replies -->
+  <div class="db-flex-item-2 db-flex-row db-bottom-border" v-show="hasReplies"><!-- Replies -->
     <div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
       R.
     </div>
@@ -55,13 +55,17 @@
     </div>
   </div>
 
-  <div class="db-flex-item db-flex-row"><!-- Totals -->
-    <div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
+  <div class="db-flex-item-2 db-flex-row"><!-- Totals -->
+    <div class="db-padding-horizontal db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
     </div>
-    <div class="db-padding-horizontal db-flex-item-fwl">
+    <div class="db-flex-item db-align-vertical-center">
+      <em>
+        Speaker scores range from [[ lowestSpeak ]] to [[ highestSpeak ]]
+        <span v-show="hasReplies"> and [[ lowestSpeak/2 ]] to [[ highestSpeak/2 ]] for reply scores.</span>
+      </em>
     </div>
     <div class="db-padding-horizontal db-flex-item db-align-vertical-center db-right-text ">
-      Total Score:
+      Total:
     </div>
     <div class="db-fill-in db-flex-item-fwl">
     </div>

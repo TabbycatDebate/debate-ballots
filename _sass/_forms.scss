@@ -1,15 +1,15 @@
 // FORM ELEMENTS
 
 input, button {
-
-}
-button {
   background: #fff;
-  border: 1px solid blue;
+  border: 1px solid rgb(200,200,200);
+  border-radius: .25rem;
   display: inline-block;
   padding: .375rem 1rem;
   line-height: 1.5;
-  text-align: center;
+    text-align: center;
+}
+button {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -17,15 +17,40 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid #ccc;
-  border-radius: .25rem
 }
-.active {
-  background: green;
-  color: #fff;
+.toggle-block {
+  border: 3px solid rgb(200,200,200);
+  border-radius: 5px;
+  button {
+    background: rgb(230,230,230);
+    color: rgb(80,80,80);
+  }
+  button.active {
+    background: green;
+    color: #fff;
+  }
+}
+.toggle-block
+input {
+
+}
+.placeholder {
+  color: #999;
+}
+label {
+  line-height: 35px;
 }
 .hidden {
   display: none;
+}
+.form-block {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.side-by-side {
+  width: 50%;
+  display: inline-block;
+  float: left;
 }
 .toggle-btn {
   display: inline-block;

@@ -1,5 +1,4 @@
 body {
-
 }
 .dbui-wrapper {
   display: flex;
@@ -7,9 +6,12 @@ body {
   min-height: 100vh; // Prevent it blowing out the height
 }
 .dbui-sidebar {
-  flex: 0 0 250px;
-  padding: 25px;
-  border-right: 1px solid red;
+  flex: 0 0 300px;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: rgb(239, 240, 242);
 }
 .dbui-preview {
   max-height: 100vh; // Prevent it blowing out the height

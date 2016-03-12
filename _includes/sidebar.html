@@ -1,44 +1,68 @@
 <aside role="complementary" class="dbui-sidebar db-hide">
 
-  <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': showFeedback === false }" class="toggle-btn left">Score Sheet</button>
-  <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback === true }" class="toggle-btn right">Feedback Sheet</button>
-  <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
+  <div class="form-block toggle-block db-flex-row">
+    <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': showFeedback === false }" class="toggle-btn left">Score Sheet</button>
+    <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback === true }" class="toggle-btn right">Feedback Sheet</button>
+    <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
+  </div>
 
-  <button v-on:click="setBPFalse" v-bind:class="{ 'active': isBP === false }" class="toggle-btn left">Two Teams</button>
-  <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP === true }" class="toggle-btn right">Four Teams</button>
+  <div class="form-block toggle-block db-flex-row">
+    <button v-on:click="setBPFalse" v-bind:class="{ 'active': isBP === false }" class="toggle-btn left">2 Teams</button>
+    <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP === true }" class="toggle-btn right">4 Teams</button>
+  </div>
 
-  <input type="text" id="tournamentNameText" v-model="tournamentName">
-  <input type="text" id="returnLocationText" v-model="returnLocation">
+  <div class="form-block toggle-block db-flex-row">
 
-  <hr>
-  <input type="radio" id="portraitOrientationRadio" value="portrait" v-model="pageOrientation">
-  <label for="portraitOrientationRadio">portrait</label>
-  <input type="radio" id="landscapeOrientationRadio" value="landscape" v-model="pageOrientation">
-  <label for="landscapeOrientationRadio">landscape</label>
-  <hr>
-  <input type="checkbox" id="doubleUpCheck" v-model="doubleUp">
-  <label for="doubleUpCheck">Double Up</label>
-  <hr>
-  <input type="checkbox" id="showTabRoomRowCheck" v-model="showTabRoomRow">
-  <label for="showTabRoomRowCheck">Show Tab Room Row</label>
-  <hr>
+    <button v-on:click="setPortrait" v-bind:class="{ 'active': pageOrientation === 'portrait' }" class="toggle-btn left">Portrait</button>
+    <button v-on:click="setLandscape" v-bind:class="{ 'active': pageOrientation === 'landscape' }" class="toggle-btn right">Landscape</button>
 
+  </div>
+
+  <div class="form-block db-flex-row">
+    <input type="text" class="side-by-side" id="tournamentNameText" v-bind:class="{ 'placeholder': tournamentName === 'Tournament Name' }" v-model="tournamentName">
+    <input type="text" class="side-by-side" id="returnLocationText" v-bind:class="{ 'placeholder': returnLocation === 'Tab Room Location' }" v-model="returnLocation">
+  </div>
+
+  <div class="form-block db-flex-row">
+    <div class="db-flex-item-1">
+      <input type="checkbox" id="doubleUpCheck" v-model="doubleUp">
+      <label for="doubleUpCheck">Double Up</label>
+    </div>
+    <div class="db-flex-item-1">
+      <input type="checkbox" id="showTabRoomRowCheck" v-model="showTabRoomRow">
+      <label for="showTabRoomRowCheck">Show Tab Room Info</label>
+    </div>
+  </div>
 
   <template v-if="showFeedback === true">
 
   </template>
+
   <template v-if="showFeedback === false">
-    <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
-    <label for="hasRepliesCheck">Has Replies</label>
-    <hr>
-    <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
-    <label for="showPronounsCheck">Show Pronouns</label>
-    <hr>
-    <label for="lowestSpeakInput">Range Minimum</label>
-    <input type="number" id="lowestSpeakInput" v-model="lowestSpeak">
-    <hr>
-    <label for="highestSpeakInput">Range Maximum</label>
-    <input type="number" id="highestSpeakInput" v-model="highestSpeak">
+
+    <div class="form-block db-flex-row">
+
+      <div class="db-flex-item-1">
+        <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
+        <label for="hasRepliesCheck">Has Replies</label>
+      </div>
+      <div class="db-flex-item-1">
+        <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
+        <label for="showPronounsCheck">Show Pronouns</label>
+      </div>
+
+    </div>
+
+    <div class="form-block db-flex-row">
+      <label class="db-flex-item-1" for="lowestSpeakInput">Range Minimum</label>
+      <input class="db-flex-item-1" type="number" id="lowestSpeakInput" v-model="lowestSpeak">
+    </div>
+
+    <div class="form-block db-flex-row">
+      <label class="db-flex-item-1" for="highestSpeakInput">Range Maximum</label>
+      <input class="db-flex-item-1" type="number" id="highestSpeakInput" v-model="highestSpeak">
+    </div>
+
   </template>
 
   <h2>How to Print/Save</h2>
