@@ -21,12 +21,12 @@
     <div class="db-flex-item-fws">
     </div>
     <div v-show="showPronouns" class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item-fwl">
-      Pronoun
+      Speaker's Pronoun
     </div>
-    <div class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item">
-      Speaker's Full Name
+    <div class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item  db-center-text">
+      Speaker's <br>Full Name
     </div>
-    <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-fwl">
+    <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-fwl db-center-text">
       Score<br> ([[ lowestSpeak ]]-[[ highestSpeak ]])
     </div>
   </div>

@@ -84,7 +84,7 @@
 }
 // PADDING
 .db-padding-horizontal {
-  margin: 0 10px 0 10px;
+  margin: 0 0 0 10px;
 }
 .db-margins-m {
   margin: 0px 15px 15px 15px;
@@ -113,6 +113,9 @@
   flex: 50%;
   // border: 1px solid #ccc;
 }
+.db-item-gutter {
+  flex: 0 0 30px;
+}
 .db-flex-static {
   flex-grow: 0;
   flex-shrink: 0;
@@ -127,7 +130,10 @@
   flex: 0 0 80px;
 }
 .db-flex-item-fwxl {
-  flex: 0 0 160px;
+  flex: 0 0 120px;
+}
+.db-flex-item-fwxxl {
+  flex: 0 0 200px;
 }
 .db-page-landscape {
   .db-flex-item-fhs {

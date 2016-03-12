@@ -16,3 +16,5 @@ Running commands
     livereload .
 
 ## Deployment
+
+    s3_website push
