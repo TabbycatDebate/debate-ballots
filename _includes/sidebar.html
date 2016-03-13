@@ -1,8 +1,15 @@
 <aside role="complementary" class="dbui-sidebar db-hide db-flex-column">
 
-  <div class="db-flex-item db-align-vertical-center">
+  <div class="db-flex-item dbui-sidebar-inner db-flex-column">
 
-    <div class="dbui-sidebar-inner">
+    <div class="db-flex-static">
+      <strong>How to Print</strong>: For best results, use Chrome or Safari.
+      Use your browser's print function (<em>File > Print</em>) and set paper
+      size/orientations as needed. Ensure "Margins" are set to <em>None</em>,
+      and "Background Graphics" are <em>on</em>.
+    </div>
+
+    <div class="db-flex-item dbui-sidebar-section">
 
       <div class="form-block toggle-block db-flex-row">
         <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': !showFeedback }" class="toggle-btn left">Score Sheet</button>
@@ -82,16 +89,18 @@
 
       </template>
 
-      <p><strong>How to Print</strong>: For best results, use Chrome or Safari.
-      Use your browser's print function (<em>File > Print</em>) and set paper
-      size/orientations as needed. Ensure "Margins" are set to <em>None</em>,
-      and "Background Graphics" are <em>on</em>.</p>
+    </div>
+
+
+    <div class="db-align-vertical-end db-flex-static dbui-sidebar-section">
 
       <p class="small">Created by <a target="_blank" href="http://philipbelesky.com/">Philip</a>.
       Feedback <a target="_blank" href="http://www.google.com/recaptcha/mailhide/d?k=01aItEbHtwnn1PzIPGGM9W8A==&c=XWljk2iGokfhziV2Rt4OiKA5uab1vCrnxwXcPUsWgnM=">
-         welcome.</a>
+         welcome</a>.
       Based on <a target="_blank" href="https://github.com/czlee/tabbycat">Tabbycat's</a>
       pre-filled ballots feature.</p>
+
+    </div>
 
   </div>
 

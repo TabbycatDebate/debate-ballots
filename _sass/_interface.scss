@@ -9,13 +9,18 @@ body {
   flex: 0 0 350px;
   font-size: 14px;
   overflow: hidden;
-  
+
   p.small {
     line-height: 15px;
     font-size: 12px;
-    margin: 0;
+    margin: 0 0 5px;
   }
 
+  .dbui-sidebar-section {
+    margin-top: 15px;
+    border-top: 1px solid #CCC;
+    padding-top: 15px;
+  }
   .dbui-sidebar-inner {
     margin: 15px;
     padding: 10px;
