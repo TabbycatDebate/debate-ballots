@@ -2,6 +2,9 @@
 .db-page-holder {
   display: flex; // Needed for contents
 }
+.db-hide-overflow {
+  overflow: hidden; // For the feedback comments line
+}
 .db-page-portrait {
   transform: scale(0.5);
   @media (min-height: 700px) {
@@ -109,6 +112,18 @@
 .db-flex-item-5 {
   flex: 5;
 }
+.db-flex-item-6 {
+  flex: 6;
+}
+.db-flex-item-7 {
+  flex: 7;
+}
+.db-flex-item-8 {
+  flex: 10;
+}
+.db-flex-item-10 {
+  flex: 10;
+}
 .db-flex-item-half {
   flex: 50%;
   // border: 1px solid #ccc;
@@ -124,7 +139,7 @@
   flex: 0 0 20px;
 }
 .db-flex-item-fwm {
-  flex: 0 0 60px;
+  flex: 0 0 30px;
 }
 .db-flex-item-fwl {
   flex: 0 0 80px;

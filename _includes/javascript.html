@@ -1,62 +1,84 @@
 <script src="/bower_components/vue/dist/vue.js"></script>
 {% include db-team-sheet.vue %}
 <script>
+
+  function getLocalStorage(keyToCheck, defaultValue) {
+    if (localStorage) {
+      var cachedValue = JSON.parse( localStorage.getItem(keyToCheck) );
+      if (cachedValue !== null) {
+        console.log(keyToCheck, cachedValue);
+        return cachedValue;
+      }
+    }
+    return defaultValue;
+  }
+  function setLocalStorage(keyToSet, setValue) {
+    if (localStorage) {
+      localStorage.setItem(keyToSet, JSON.stringify(setValue) );
+    }
+  }
+
   Vue.config.delimiters = ["[[", "]]"];
   new Vue({
     el: '#debateballots',
     data: {
       // Type
-      showFeedback: false,
+      showFeedback: getLocalStorage('showFeedback', false),
       // Strings to Fill In
-      tournamentName: "Tournament Name",
-      returnLocation: "Tab Room Location",
-      returnBallotsTo: '',
-      currentRound: '',
+      tournamentName: getLocalStorage('tournamentName', "Tournament Name"),
+      returnLocation: getLocalStorage('returnLocation'," Tab Room Location"),
       // Rules
-      hasReplies: false,
-      speakersCount: 3,
-      isBP: false,
-      lowestSpeak: 68,
-      highestSpeak: 82,
+      hasReplies: getLocalStorage('hasReplies', false),
+      speakersCount: getLocalStorage('speakersCount', 3),
+      isBP: getLocalStorage('isBP', false),
+      infoText: getLocalStorage('infoText' , "Speeches are x minutes, the speaker score range is from x to x. You have x minutes to form an adjudication."),
+      hasMotionSelection: getLocalStorage('hasMotionSelection', false),
       // Formatting
-      showTabRoomRow: true,
-      pageOrientation: 'landscape',
-      showPronouns: true,
-      doubleUp: false,
+      showTabRoomRow: getLocalStorage('showTabRoomRow', true),
+      showInfoRow: getLocalStorage('showInfoRow', false),
+      pageOrientation: getLocalStorage('pageOrientation', 'landscape'),
+      showPronouns: getLocalStorage('showPronouns', true),
+      doubleUp: getLocalStorage('doubleUp', false),
     },
-    computed: {
-      pageOrientationClass: function () {
-        if (this.pageOrientation === "portrait") {
-          return "db-page-portrait";
-        } else {
-          return "db-page-landscape";
-        }
-      },
-      pageDoublingClass: function () {
-        if (this.doubleUp === true) {
-          return "db-page-double";
-        } else {
-          return "db-page-single";
-        }
-      },
-      teamsCountInt: function () {
-        return parseInt(this.teamsCount);
-      },
+    watch: {
+      // Type
+      'showFeedback': function (val, oldVal) { setLocalStorage('showFeedback', val) },
+      // Strings to Fill In
+      'tournamentName': function (val, oldVal) { setLocalStorage('tournamentName', val) },
+      'returnLocation': function (val, oldVal) { setLocalStorage('returnLocation', val) },
+      // Rules
+      'hasReplies': function (val, oldVal) { setLocalStorage('hasReplies', val) },
+      'speakersCount': function (val, oldVal) { setLocalStorage('speakersCount', val) },
+      'isBP': function (val, oldVal) { setLocalStorage('isBP', val) },
+      'infoText': function (val, oldVal) { setLocalStorage('infoText' ,val) },
+      'hasMotionSelection': function (val, oldVal) { setLocalStorage('hasMotionSelection', val) },
+      // Formatting
+      'showTabRoomRow': function (val, oldVal) { setLocalStorage('showTabRoomRow', val) },
+      'showInfoRow': function (val, oldVal) { setLocalStorage('showInfoRow', val) },
+      'pageOrientation': function (val, oldVal) { setLocalStorage('pageOrientation', val) },
+      'showPronouns': function (val, oldVal) { setLocalStorage('showPronouns', val) },
+      'doubleUp': function (val, oldVal) { setLocalStorage('doubleUp', val) },
     },
     methods: {
       setFeedbackFalse: function() {
         this.showFeedback = false;
         document.title = "debatingballot.com — Score Sheet for " + this.tournamentName;
+        if(localStorage){
+          localStorage.setItem( 'showFeedback', JSON.stringify(false) );
+        }
       },
       setFeedbackTrue: function() {
         this.showFeedback = true;
         document.title = "debatingballot.com — Feedback Sheet for " + this.tournamentName;
+        localStorage.setItem( 'showFeedback', JSON.stringify(true) );
       },
       setBPFalse: function() {
         this.isBP = false;
+        this.speakersCount = 3;
       },
       setBPTrue: function() {
         this.isBP = true;
+        this.speakersCount = 2;
       },
       setPortrait: function() {
         this.pageOrientation = 'portrait';
@@ -64,7 +86,6 @@
       setLandscape: function() {
         this.pageOrientation = 'landscape';
       },
-
     }
   })
 </script>

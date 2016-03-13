@@ -21,7 +21,12 @@
 
 		<div class="dbui-preview">
 			<div class="db-page-holder">
-			  <main role="main" class="db-page" v-bind:class="[pageOrientationClass, pageDoublingClass]">
+			  <main role="main" class="db-page" v-bind:class="{
+					'db-page-double': doubleUp,
+					'db-page-single': !doubleUp,
+					'db-page-landscape': pageOrientation === 'landscape',
+					'db-page-portrait': pageOrientation === 'portrait',
+				}">
 					<template v-if="showFeedback === true">
 						{% include feedback-preview.html %}
 						<template v-if="doubleUp === true">

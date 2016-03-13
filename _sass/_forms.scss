@@ -1,13 +1,18 @@
 // FORM ELEMENTS
 
-input, button {
+input, button, textarea {
   background: #fff;
   border: 1px solid rgb(200,200,200);
-  border-radius: .25rem;
+  border-radius: 4px;
   display: inline-block;
-  padding: .375rem 1rem;
+  padding: 5px 10px;
   line-height: 1.5;
     text-align: center;
+}
+textarea {
+  height: 65px;
+  text-align: left;
+  font-style: italic;
 }
 button {
   white-space: nowrap;
@@ -22,18 +27,24 @@ button {
   border: 3px solid rgb(200,200,200);
   border-radius: 5px;
   button {
+    border-radius: 3px;
     background: rgb(230,230,230);
-    color: rgb(80,80,80);
+    color: rgb(130,130,130);
+  }
+  button:hover {
+    color: green;
+    font-weight: bold;
   }
   button.active {
     background: green;
     color: #fff;
   }
 }
-.toggle-block
-input {
-
+.small-input {
+  width: 30px;
+  float: right;
 }
+
 .placeholder {
   color: #999;
 }
@@ -46,6 +57,9 @@ label {
 .form-block {
   margin-bottom: 10px;
   overflow: hidden;
+  .divider {
+    width: 10px;
+  }
 }
 .side-by-side {
   width: 50%;
