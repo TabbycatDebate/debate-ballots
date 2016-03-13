@@ -77,25 +77,21 @@
     <div class="db-flex-item db-flex-row db-align-vertical-center">
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
         <span class="db-fill-in">
-          <template v-if="pageIsLandscape or doubleUp">Placed </template>
           1<sup>st</sup>
         </span>
       </div>
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
         <span class="db-fill-in">
-          <template v-if="pageIsLandscape or doubleUp">Placed </template>
           2<sup>nd</sup>
         </span>
       </div>
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
         <span class="db-fill-in">
-          <template v-if="pageIsLandscape or doubleUp">Placed </template>
           3<sup>rd</sup>
         </span>
       </div>
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
         <span class="db-fill-in">
-          <template v-if="pageIsLandscape or doubleUp">Placed </template>
           4<sup>th</sup>
         </span>
       </div>

@@ -26,6 +26,8 @@
 					'db-page-single': !doubleUp,
 					'db-page-landscape': pageIsLandscape,
 					'db-page-portrait': !pageIsLandscape,
+					'db-flex-column': doubleUp && !pageIsLandscape,
+					'db-flex-row': doubleUp && pageIsLandscape,
 				}">
 					<template v-if="showFeedback">
 						{% include feedback-preview.html %}
