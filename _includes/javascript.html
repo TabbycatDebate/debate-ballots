@@ -36,7 +36,7 @@
       // Formatting
       showTabRoomRow: getLocalStorage('showTabRoomRow', true),
       showInfoRow: getLocalStorage('showInfoRow', false),
-      pageOrientation: getLocalStorage('pageOrientation', 'landscape'),
+      pageIsLandscape: getLocalStorage('pageIsLandscape', true),
       showPronouns: getLocalStorage('showPronouns', true),
       doubleUp: getLocalStorage('doubleUp', false),
     },
@@ -55,7 +55,7 @@
       // Formatting
       'showTabRoomRow': function (val, oldVal) { setLocalStorage('showTabRoomRow', val) },
       'showInfoRow': function (val, oldVal) { setLocalStorage('showInfoRow', val) },
-      'pageOrientation': function (val, oldVal) { setLocalStorage('pageOrientation', val) },
+      'pageIsLandscape': function (val, oldVal) { setLocalStorage('pageIsLandscape', val) },
       'showPronouns': function (val, oldVal) { setLocalStorage('showPronouns', val) },
       'doubleUp': function (val, oldVal) { setLocalStorage('doubleUp', val) },
     },
@@ -81,10 +81,10 @@
         this.speakersCount = 2;
       },
       setPortrait: function() {
-        this.pageOrientation = 'portrait';
+        this.pageIsLandscape = false;
       },
       setLandscape: function() {
-        this.pageOrientation = 'landscape';
+        this.pageIsLandscape = true;
       },
     }
   })

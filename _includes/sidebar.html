@@ -17,8 +17,8 @@
 
       <div class="form-block toggle-block db-flex-row">
 
-        <button v-on:click="setPortrait" v-bind:class="{ 'active': pageOrientation === 'portrait' }" class="toggle-btn left">A4 Portrait</button>
-        <button v-on:click="setLandscape" v-bind:class="{ 'active': pageOrientation === 'landscape' }" class="toggle-btn right">A4 Landscape</button>
+        <button v-on:click="setPortrait" v-bind:class="{ 'active': !pageIsLandscape }" class="toggle-btn left">A4 Portrait</button>
+        <button v-on:click="setLandscape" v-bind:class="{ 'active': pageIsLandscape }" class="toggle-btn right">A4 Landscape</button>
 
       </div>
 

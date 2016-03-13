@@ -24,8 +24,8 @@
 			  <main role="main" class="db-page" v-bind:class="{
 					'db-page-double': doubleUp,
 					'db-page-single': !doubleUp,
-					'db-page-landscape': pageOrientation === 'landscape',
-					'db-page-portrait': pageOrientation === 'portrait',
+					'db-page-landscape': pageIsLandscape,
+					'db-page-portrait': !pageIsLandscape,
 				}">
 					<template v-if="showFeedback === true">
 						{% include feedback-preview.html %}
