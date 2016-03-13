@@ -88,21 +88,23 @@
 
   </section>
 
-  <section class="db-flex-row db-flex-item-7">
+  <section class="db-flex-row db-flex-item-7 db-margins-m ">
 
-    <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+    <div class="db-flex-column db-bordered db-flex-item-half">
       <db-team-sheet :n=0 :double-up=doubleUp :page-orientation=pageOrientation :is-bp=isBP :show-pronouns=showPronouns :has-replies=hasReplies :speakers-count=speakersCount></db-team-sheet>
     </div>
-    <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+    <div class="db-item-gutter"></div>
+    <div class="db-flex-column db-bordered db-flex-item-half">
       <db-team-sheet :n=1 :double-up=doubleUp :page-orientation=pageOrientation :is-bp=isBP :show-pronouns=showPronouns :has-replies=hasReplies :speakers-count=speakersCount></db-team-sheet>
     </div>
   </section>
 
-  <section class="db-flex-row db-flex-item-7" v-if="isBP">
-    <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+  <section class="db-flex-row db-flex-item-7 db-margins-m " v-if="isBP">
+    <div class="db-flex-column db-bordered db-flex-item-half">
       <db-team-sheet :n=2 :double-up=doubleUp :page-orientation=pageOrientation :is-bp=isBP :show-pronouns=showPronouns :has-replies=hasReplies :speakers-count=speakersCount></db-team-sheet>
     </div>
-    <div class="db-flex-column db-margins-m db-bordered db-flex-item-half">
+    <div class="db-item-gutter"></div>
+    <div class="db-flex-column db-bordered db-flex-item-half">
       <db-team-sheet :n=3 :double-up=doubleUp :page-orientation=pageOrientation :is-bp=isBP :show-pronouns=showPronouns :has-replies=hasReplies :speakers-count=speakersCount></db-team-sheet>
     </div>
   </section>

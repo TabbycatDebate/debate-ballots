@@ -133,6 +133,9 @@
 .db-item-gutter {
   flex: 0 0 30px;
 }
+.db-page-double .db-item-gutter {
+  flex: 0 0 15px;
+}
 .db-flex-static {
   flex-grow: 0;
   flex-shrink: 0;
