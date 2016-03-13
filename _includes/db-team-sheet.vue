@@ -20,13 +20,13 @@
   <div class="db-flex-item-2 db-flex-row db-bottom-border  db-dont-fill-in"><!-- Keys -->
     <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': isBP === false, 'db-flex-item-fwm': isBP === true }">
     </div>
-    <div v-show="showPronouns" class="db-align-horizontal-center db-align-vertical-center db-left-text" db-flex-item-fwl">
+    <div v-show="showPronouns" class="db-align-vertical-center db-align-horizontal-center db-flex-item-fwl">
       Pronoun
     </div>
-    <div class="db-align-horizontal-center db-align-vertical-center db-padding-horizontal db-flex-item  db-center-text">
+    <div class="db-align-vertical-center db-padding-horizontal db-align-horizontal-center db-flex-item">
       Full Name
     </div>
-    <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-fwl db-center-text">
+    <div class="db-align-vertical-center db-flex-item-fwl db-align-horizontal-center">
       Score
     </div>
   </div>
@@ -34,20 +34,20 @@
   <div class="db-flex-item-2 db-flex-row db-bottom-border" v-for="x in speakersCount"><!-- Speakers -->
     <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': isBP === false, 'db-flex-item-fwm': isBP === true }">
       <template v-if="isBP === false">
-        [[ x + 1 ]].
+        [[ x + 1 ]]
       </template>
       <template v-if="isBP === true">
         <span v-if="n === 0">
-          <span v-if="x === 0">PM.</span><span v-else>DPM.</span>
+          <span v-if="x === 0">PM</span><span v-else>DPM</span>
         </span>
         <span v-if="n === 1">
-          <span v-if="x === 0">LO.</span><span v-else>DLO.</span>
+          <span v-if="x === 0">LO</span><span v-else>DLO</span>
         </span>
         <span v-if="n === 2">
-          <span v-if="x === 0">GM.</span><span v-else>GW.</span>
+          <span v-if="x === 0">GM</span><span v-else>GW</span>
         </span>
         <span v-if="n === 3">
-          <span v-if="x === 0">OM.</span><span v-else>OW.</span>
+          <span v-if="x === 0">OM</span><span v-else>OW</span>
         </span>
       </template>
     </div>
@@ -76,19 +76,31 @@
     </div>
     <div class="db-flex-item db-flex-row db-align-vertical-center">
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
-        <span class="db-fill-in">Placed 1<sup>st</sup></span>
+        <span class="db-fill-in">
+          <template v-if="pageOrientation === 'landscape' or doubleUp">Placed </template>
+          1<sup>st</sup>
+        </span>
       </div>
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
-        <span class="db-fill-in">Placed 2<sup>nd</sup></span>
+        <span class="db-fill-in">
+          <template v-if="pageOrientation === 'landscape' or doubleUp">Placed </template>
+          2<sup>nd</sup>
+        </span>
       </div>
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
-        <span class="db-fill-in">Placed 3<sup>rd</sup></span>
+        <span class="db-fill-in">
+          <template v-if="pageOrientation === 'landscape' or doubleUp">Placed </template>
+          3<sup>rd</sup>
+        </span>
       </div>
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">
-        <span class="db-fill-in">Placed 4<sup>th</sup></span>
+        <span class="db-fill-in">
+          <template v-if="pageOrientation === 'landscape' or doubleUp">Placed </template>
+          4<sup>th</sup>
+        </span>
       </div>
     </div>
-    <div class="db-padding-horizontal db-flex-item-fwl db-align-vertical-center db-right-text">
+    <div class="db-padding-horizontal db-static db-align-vertical-center db-right-text">
       Total Score:
     </div>
     <div class="db-fill-in db-flex-item-fwl">
@@ -107,6 +119,8 @@
       speakersCount: Number,
       showPronouns: Boolean,
       hasReplies: Boolean,
+      pageOrientation: String,
+      doubleUp: Boolean
     },
   })
 </script>

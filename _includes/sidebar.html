@@ -31,7 +31,7 @@
       <div class="form-block db-flex-row">
         <div class="db-flex-item-1">
           <input type="checkbox" id="doubleUpCheck" v-model="doubleUp">
-          <label for="doubleUpCheck">Double-Up Pages</label>
+          <label for="doubleUpCheck">Two-Per-Page</label>
         </div>
         <div class="divider"></div>
         <div class="db-flex-item-1">
@@ -40,11 +40,11 @@
         </div>
       </div>
 
-      <template v-if="showFeedback === true">
+      <template v-if="showFeedback === true" transition="expand">
 
       </template>
 
-      <template v-if="showFeedback === false">
+      <template v-if="showFeedback === false" transition="expand">
 
         <div class="form-block db-flex-row">
 
@@ -83,9 +83,9 @@
       </template>
 
       <p><strong>How to Print</strong>: For best results, use Chrome or Safari.
-      Use your browser's print function (<em>File > Print</em>) and set paper size/orientations
-      as needed. Ensure "Margins" are set to <em>None</em>, and
-      "Background Graphics" and <em>on</em></p>
+      Use your browser's print function (<em>File > Print</em>) and set paper
+      size/orientations as needed. Ensure "Margins" are set to <em>None</em>,
+      and "Background Graphics" are <em>on</em>.</p>
 
       <p class="small">Created by <a target="_blank" href="http://philipbelesky.com/">Philip</a>.
       Feedback <a target="_blank" href="http://www.google.com/recaptcha/mailhide/d?k=01aItEbHtwnn1PzIPGGM9W8A==&c=XWljk2iGokfhziV2Rt4OiKA5uab1vCrnxwXcPUsWgnM=">

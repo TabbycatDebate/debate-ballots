@@ -65,6 +65,7 @@
 .db-page-portrait, {
   height: 297mm;
   width: 210mm;
+
   &.db-page-single .db-score-sheet {
     height: 100%;
   }
@@ -76,6 +77,7 @@
 .db-page-landscape {
   width: 297mm;
   height: 210mm;
+
   &.db-page-single .db-score-sheet {
     height: 100%;
   }
@@ -142,10 +144,10 @@
   flex: 0 0 30px;
 }
 .db-flex-item-fwl {
-  flex: 0 0 80px;
+  flex: 0 0 60px;
 }
 .db-flex-item-fwxl {
-  flex: 0 0 120px;
+  flex: 0 0 80px;
 }
 .db-flex-item-fwxxl {
   flex: 0 0 200px;

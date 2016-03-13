@@ -30,6 +30,7 @@ button {
     border-radius: 3px;
     background: rgb(230,230,230);
     color: rgb(130,130,130);
+    transition: background 0.5s, color 0.5s;
   }
   button:hover {
     color: green;
