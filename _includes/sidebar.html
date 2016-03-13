@@ -5,14 +5,14 @@
     <div class="dbui-sidebar-inner">
 
       <div class="form-block toggle-block db-flex-row">
-        <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': showFeedback === false }" class="toggle-btn left">Score Sheet</button>
-        <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback === true }" class="toggle-btn right">Feedback Sheet</button>
+        <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': !showFeedback }" class="toggle-btn left">Score Sheet</button>
+        <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback }" class="toggle-btn right">Feedback Sheet</button>
         <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
       </div>
 
       <div class="form-block toggle-block db-flex-row">
-        <button v-on:click="setBPFalse" v-bind:class="{ 'active': isBP === false }" class="toggle-btn left">2 Teams</button>
-        <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP === true }" class="toggle-btn right">4 Teams</button>
+        <button v-on:click="setBPFalse" v-bind:class="{ 'active': !isBP }" class="toggle-btn left">2 Teams</button>
+        <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP }" class="toggle-btn right">4 Teams</button>
       </div>
 
       <div class="form-block toggle-block db-flex-row">
@@ -40,11 +40,11 @@
         </div>
       </div>
 
-      <template v-if="showFeedback === true" transition="expand">
+      <template v-if="showFeedback" transition="expand">
 
       </template>
 
-      <template v-if="showFeedback === false" transition="expand">
+      <template v-if="!showFeedback" transition="expand">
 
         <div class="form-block db-flex-row">
 

@@ -55,10 +55,10 @@
 
     <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
       <div class="db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
-        <span v-if="isBP === false">If a team, did you:</span>
-        <span v-if="isBP === true">If a team, did you:</span>
+        <span v-if="!isBP">If a team, did you:</span>
+        <span v-if="isBP">If a team, did you:</span>
       </div>
-      <div class="db-flex-item db-flex-row" v-if="isBP === false">
+      <div class="db-flex-item db-flex-row" v-if="!isBP">
         <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
           <span class="db-fill-in">Win</span>
         </div>
@@ -66,7 +66,7 @@
           <span class="db-fill-in">Lose</span>
         </div>
       </div>
-      <div class="db-flex-item db-flex-row" v-if="isBP === true">
+      <div class="db-flex-item db-flex-row" v-if="isBP">
         <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
           <span class="db-fill-in">Place 1<sup>st</sup></span>
         </div>

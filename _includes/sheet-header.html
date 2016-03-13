@@ -8,8 +8,8 @@
   <div class="db-align-vertical-center db-flex-item-1">
     <h2>
       [[ tournamentName ]]
-      <span v-if="showFeedback === true">Feedback</span>
-      <span v-if="showFeedback === false">Scoresheet</span>
+      <span v-if="showFeedback">Feedback</span>
+      <span v-if="!showFeedback">Scoresheet</span>
     </h2>
   </div>
 

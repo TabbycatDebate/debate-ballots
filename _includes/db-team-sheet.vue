@@ -2,11 +2,11 @@
 
   <div class="db-flex-item-2 db-flex-row db-bottom-border">
     <div class="db-padding-horizontal db-flex-item db-align-vertical-center db-flex-static db-right-text">
-      <template v-if="isBP === false">
+      <template v-if="!isBP">
         <span v-if="n === 0">Affirmative:</span>
         <span v-if="n === 1">Negative:</span>
       </template>
-      <template v-if="isBP === true">
+      <template v-if="isBP">
         <span v-if="n === 0">Opening Government:</span>
         <span v-if="n === 1">Opening Opposition:</span>
         <span v-if="n === 2">Closing Government:</span>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="db-flex-item-2 db-flex-row db-bottom-border  db-dont-fill-in"><!-- Keys -->
-    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': isBP === false, 'db-flex-item-fwm': isBP === true }">
+    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
     </div>
     <div v-show="showPronouns" class="db-align-vertical-center db-align-horizontal-center db-flex-item-fwl">
       Pronoun
@@ -32,11 +32,11 @@
   </div>
 
   <div class="db-flex-item-2 db-flex-row db-bottom-border" v-for="x in speakersCount"><!-- Speakers -->
-    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': isBP === false, 'db-flex-item-fwm': isBP === true }">
-      <template v-if="isBP === false">
+    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
+      <template v-if="!isBP">
         [[ x + 1 ]]
       </template>
-      <template v-if="isBP === true">
+      <template v-if="isBP">
         <span v-if="n === 0">
           <span v-if="x === 0">PM</span><span v-else>DPM</span>
         </span>
@@ -72,7 +72,7 @@
   </div>
 
   <div class="db-flex-item-2 db-flex-row"><!-- Totals -->
-    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': isBP === false, 'db-flex-item-fwm': isBP === true }">
+    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
     </div>
     <div class="db-flex-item db-flex-row db-align-vertical-center">
       <div class="db-align-vertical-center db-flex-item-1 db-left-text db-vertical-center-text" v-if="isBP">

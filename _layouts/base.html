@@ -27,16 +27,12 @@
 					'db-page-landscape': pageIsLandscape,
 					'db-page-portrait': !pageIsLandscape,
 				}">
-					<template v-if="showFeedback === true">
+					<template v-if="showFeedback">
 						{% include feedback-preview.html %}
-						<template v-if="doubleUp === true">
-							{% include feedback-preview.html %}
-						</template>
+						<template v-if="doubleUp">{% include feedback-preview.html %}</template>
 					</template>
-					<template v-if="showFeedback === false">
-						{% include ballot-preview.html %}
-						<template v-if="doubleUp === true">
-							{% include ballot-preview.html %}
+					<template v-if="!showFeedback">
+						{% include ballot-preview.html %}<template v-if="doubleUp">{% include ballot-preview.html %}
 						</template>
 					</template>
 				</main>
