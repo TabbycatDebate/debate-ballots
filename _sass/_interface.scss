@@ -1,4 +1,6 @@
+
 body {
+  background: #eff0f2;
 }
 .dbui-wrapper {
   display: flex;
@@ -6,28 +8,34 @@ body {
   min-height: 100vh; // Prevent it blowing out the height
 }
 .dbui-sidebar {
-  flex: 0 0 350px;
+  flex: 0 0 300px;
   font-size: 14px;
   overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+  padding: 20px;
+  color: #333;
 
+  h4 {
+    color: #000;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  p {
+    margin: 0;
+  }
   p.small {
     line-height: 15px;
     font-size: 12px;
-    margin: 0 0 5px;
   }
-
   .dbui-sidebar-section {
     margin-top: 15px;
-    border-top: 1px solid #CCC;
+    border-top: 1px solid #eff0f2;
     padding-top: 15px;
   }
-  .dbui-sidebar-inner {
-    margin: 15px;
-    padding: 10px;
-    background-color: rgb(239, 240, 242);
-    border-radius: 5px;
-  }
-
 }
 .dbui-preview {
   max-height: 100vh; // Prevent it blowing out the height
@@ -36,4 +44,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.db-safari-info, .db-chrome-info {
+  display: none;
+}
+.chrome .db-chrome-info, .safari .db-safari-info {
+  display: inline;
 }

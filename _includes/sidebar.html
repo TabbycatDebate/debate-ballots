@@ -1,106 +1,112 @@
 <aside role="complementary" class="dbui-sidebar db-hide db-flex-column">
 
-  <div class="db-flex-item dbui-sidebar-inner db-flex-column">
+  <div class="db-flex-item">
+    <h4>Ballot Configuration</h4>
 
-    <div class="db-flex-static">
-      <strong>How to Print</strong>: For best results, use Chrome or Safari.
-      Use your browser's print function (<em>File > Print</em>) and set paper
-      size/orientations as needed. Ensure "Margins" are set to <em>None</em>,
-      and "Background Graphics" are <em>on</em>.
+    <div class="form-block toggle-block db-flex-row">
+      <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': !showFeedback }" class="toggle-btn left">Score Sheet</button>
+      <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback }" class="toggle-btn right">Feedback Sheet</button>
+      <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
     </div>
 
-    <div class="db-flex-item dbui-sidebar-section">
+    <div class="form-block toggle-block db-flex-row">
+      <button v-on:click="setBPFalse" v-bind:class="{ 'active': !isBP }" class="toggle-btn left">2 Teams</button>
+      <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP }" class="toggle-btn right">4 Teams</button>
+    </div>
 
-      <div class="form-block toggle-block db-flex-row">
-        <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': !showFeedback }" class="toggle-btn left">Score Sheet</button>
-        <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback }" class="toggle-btn right">Feedback Sheet</button>
-        <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
+    <div class="form-block toggle-block db-flex-row">
+
+      <button v-on:click="setPortrait" v-bind:class="{ 'active': !pageIsLandscape }" class="toggle-btn left">A4 Portrait</button>
+      <button v-on:click="setLandscape" v-bind:class="{ 'active': pageIsLandscape }" class="toggle-btn right">A4 Landscape</button>
+
+    </div>
+
+    <div class="form-block db-flex-row">
+      <input type="text" class="side-by-side" id="tournamentNameText" v-bind:class="{ 'placeholder': tournamentName === 'Tournament Name' }" v-model="tournamentName">
+      <div class="divider"></div>
+      <input type="text" class="side-by-side" id="returnLocationText" v-bind:class="{ 'placeholder': returnLocation === 'Tab Room Location' }" v-model="returnLocation">
+    </div>
+
+    <div class="form-block db-flex-row">
+      <div class="db-flex-item-1">
+        <input type="checkbox" id="doubleUpCheck" v-model="doubleUp">
+        <label for="doubleUpCheck">Two-Per-Page</label>
       </div>
-
-      <div class="form-block toggle-block db-flex-row">
-        <button v-on:click="setBPFalse" v-bind:class="{ 'active': !isBP }" class="toggle-btn left">2 Teams</button>
-        <button v-on:click="setBPTrue" v-bind:class="{ 'active': isBP }" class="toggle-btn right">4 Teams</button>
+      <div class="divider"></div>
+      <div class="db-flex-item-1">
+        <input type="checkbox" id="showTabRoomRowCheck" v-model="showTabRoomRow">
+        <label for="showTabRoomRowCheck">Show Tab Room Info</label>
       </div>
+    </div>
 
-      <div class="form-block toggle-block db-flex-row">
+    <template v-if="showFeedback" transition="expand">
 
-        <button v-on:click="setPortrait" v-bind:class="{ 'active': !pageIsLandscape }" class="toggle-btn left">A4 Portrait</button>
-        <button v-on:click="setLandscape" v-bind:class="{ 'active': pageIsLandscape }" class="toggle-btn right">A4 Landscape</button>
+    </template>
+
+    <template v-if="!showFeedback" transition="expand">
+
+      <div class="form-block db-flex-row">
+
+        <div class="db-flex-item-1">
+          <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
+          <label for="hasRepliesCheck">Has Replies</label>
+        </div>
+        <div class="divider"></div>
+        <div class="db-flex-item-1">
+          <input type="checkbox" id="hasMotionsCheck" v-model="hasMotionSelection">
+          <label for="hasMotionsCheck">Has Motion Options</label>
+        </div>
 
       </div>
 
       <div class="form-block db-flex-row">
-        <input type="text" class="side-by-side" id="tournamentNameText" v-bind:class="{ 'placeholder': tournamentName === 'Tournament Name' }" v-model="tournamentName">
-        <div class="divider"></div>
-        <input type="text" class="side-by-side" id="returnLocationText" v-bind:class="{ 'placeholder': returnLocation === 'Tab Room Location' }" v-model="returnLocation">
-      </div>
 
-      <div class="form-block db-flex-row">
         <div class="db-flex-item-1">
-          <input type="checkbox" id="doubleUpCheck" v-model="doubleUp">
-          <label for="doubleUpCheck">Two-Per-Page</label>
+          <input type="checkbox" id="showInfoCheck" v-model="showInfo">
+          <label for="showInfoCheck">Show Rules Info</label>
         </div>
         <div class="divider"></div>
         <div class="db-flex-item-1">
-          <input type="checkbox" id="showTabRoomRowCheck" v-model="showTabRoomRow">
-          <label for="showTabRoomRowCheck">Show Tab Room Info</label>
+          <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
+          <label for="showPronounsCheck">Show Pronouns</label>
         </div>
+
       </div>
 
-      <template v-if="showFeedback" transition="expand">
+      <div class="form-block db-flex-row" v-if="showInfo">
 
-      </template>
+        <textarea class="db-flex-item-1">[[ infoText ]]</textarea>
 
-      <template v-if="!showFeedback" transition="expand">
+      </div>
 
-        <div class="form-block db-flex-row">
+    </template>
 
-          <div class="db-flex-item-1">
-            <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
-            <label for="hasRepliesCheck">Has Replies</label>
-          </div>
-          <div class="divider"></div>
-          <div class="db-flex-item-1">
-            <input type="checkbox" id="hasMotionsCheck" v-model="hasMotionSelection">
-            <label for="hasMotionsCheck">Has Motion Options</label>
-          </div>
+  </div>
 
-        </div>
+  <div class="db-flex-static dbui-sidebar-section">
+    <h4>How to Print in <span class="db-safari-info">Safari</span>
+                        <span class="db-chrome-info">Chrome</span></h4>
 
-        <div class="form-block db-flex-row">
+    <p>Use your browser's print function (File > Print) and set paper
+    size/orientations as needed.
+    <span class="db-safari-info">Ensure "Print backgrounds" is <strong>on</strong> and "Print headers and footers" is <strong>off</strong>.<span>
+    <span class="db-chrome-info">Under "More Settings" ensure "Margins" are <strong>None</strong>, "Simplify Page" is <strong>off</strong> and "Background graphics" is <strong>on</strong>.<span>
 
-          <div class="db-flex-item-1">
-            <input type="checkbox" id="showInfoCheck" v-model="showInfo">
-            <label for="showInfoCheck">Show Rules Info</label>
-          </div>
-          <div class="divider"></div>
-          <div class="db-flex-item-1">
-            <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
-            <label for="showPronounsCheck">Show Pronouns</label>
-          </div>
-
-        </div>
-
-        <div class="form-block db-flex-row" v-if="showInfo">
-
-          <textarea class="db-flex-item-1">[[ infoText ]]</textarea>
-
-        </div>
-
-      </template>
-
-    </div>
+    </p>
+  </div>
 
 
-    <div class="db-align-vertical-end db-flex-static dbui-sidebar-section">
+  <div class="db-flex-static dbui-sidebar-section">
+    <p>Ad here</p>
+  </div>
 
-      <p class="small">Created by <a target="_blank" href="http://philipbelesky.com/">Philip</a>.
-      Feedback <a target="_blank" href="http://www.google.com/recaptcha/mailhide/d?k=01aItEbHtwnn1PzIPGGM9W8A==&c=XWljk2iGokfhziV2Rt4OiKA5uab1vCrnxwXcPUsWgnM=">
-         welcome</a>.
-      Based on <a target="_blank" href="https://github.com/czlee/tabbycat">Tabbycat's</a>
-      pre-filled ballots feature.</p>
+  <div class="db-flex-static dbui-sidebar-section">
 
-    </div>
+    <p class="small">Created by <a target="_blank" href="http://philipbelesky.com/">Philip</a>.
+    Feedback <a target="_blank" href="http://www.google.com/recaptcha/mailhide/d?k=01aItEbHtwnn1PzIPGGM9W8A==&c=XWljk2iGokfhziV2Rt4OiKA5uab1vCrnxwXcPUsWgnM=">
+       welcome</a>.
+    Based on <a target="_blank" href="https://github.com/czlee/tabbycat">Tabbycat's</a>
+    pre-filled ballots feature.</p>
 
   </div>
 

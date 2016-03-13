@@ -1,17 +1,14 @@
-$lato-font-path: '../bower_components/lato/font';
-
-@import "../bower_components/lato/scss/lato";
 
 body {
   font-family: 'Lato';
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
 }
 .db-page-double {
   font-size: 10px;
 }
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, strong {
   margin: 0px;
   font-weight: 900;
   font-style: normal;
