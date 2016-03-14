@@ -1,19 +1,22 @@
-
 body {
   background: #eff0f2;
+}
+a {
+  color: #000;
 }
 .dbui-wrapper {
   display: flex;
   flex-direction: row;
-  min-height: 100vh; // Prevent it blowing out the height
+  max-height: 100vh; // Prevent it blowing out the height
 }
 .dbui-sidebar {
   flex: 0 0 300px;
   font-size: 14px;
+  line-height: 18px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   color: #333;
 
   h4 {
@@ -25,16 +28,15 @@ body {
     letter-spacing: 0.1em;
   }
   p {
-    margin: 0;
+    margin: 0 0 5px;
   }
   p.small {
     line-height: 15px;
     font-size: 12px;
   }
   .dbui-sidebar-section {
-    margin-top: 15px;
-    border-top: 1px solid #eff0f2;
-    padding-top: 15px;
+    margin-top: 10px;
+    padding-top: 10px;
   }
 }
 .dbui-preview {
@@ -45,9 +47,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-.db-safari-info, .db-chrome-info {
+.db-safari-info, .db-chrome-info, .db-firefox-info, .chrome .db-notchrome-info {
   display: none;
 }
-.chrome .db-chrome-info, .safari .db-safari-info {
+.chrome .db-chrome-info, .safari .db-safari-info, .gecko .db-firefox-info {
   display: inline;
 }

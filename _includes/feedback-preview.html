@@ -1,24 +1,21 @@
-<section class="db-score-sheet db-flex-column">
+<section class="db-score-sheet db-flex-item db-flex-column">
 
   {% include sheet-header.html %}
 
-  <section class="db-margins-m db-bordered db-flex-row db-flex-item-fhm">
+  <section class="db-margins-m db-bordered db-flex-row db-flex-item-1">
 
     <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
       <div class="db-align-vertical-center db-padding-horizontal db-flex-item db-flex-static db-vertical-center-text">
-        Who is your <br>Feedback For?
+        This feedback is for:
       </div>
       <div class="db-flex-item db-flex-row">
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">A Team</span>
-        </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
           <span class="db-fill-in">The Chair</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
           <span class="db-fill-in">A Panellist</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
           <span class="db-fill-in">A Trainee</span>
         </div>
       </div>
@@ -38,16 +35,48 @@
 
     <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
       <div class="db-align-vertical-center db-padding-horizontal db-flex-item db-flex-static db-vertical-center-text">
-        Did you agree with<br> their decision?
+        Your were:
       </div>
       <div class="db-flex-item db-flex-row">
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">A Team</span>
+        </div>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">The Chair</span>
+        </div>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">A Panellist</span>
+        </div>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">A Trainee</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
+      <div class="db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
+        Your Name:
+      </div>
+      <div class="db-flex-item db-fill-in ">
+      </div>
+    </div>
+
+  </section>
+
+  <section class="db-margins-m db-bordered db-flex-row db-flex-item-1">
+
+    <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
+      <div class="db-align-vertical-center db-padding-horizontal db-flex-item db-flex-static db-vertical-center-text">
+        Did you agree with their decision:
+      </div>
+      <div class="db-flex-item db-flex-row">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
           <span class="db-fill-in">Yes</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Meh</span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">Unsure</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
           <span class="db-fill-in">No</span>
         </div>
       </div>
@@ -55,29 +84,29 @@
 
     <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
       <div class="db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
-        <span v-if="!isBP">If a team, did you:</span>
-        <span v-if="isBP">If a team, did you:</span>
+        <span v-if="!isBP">If you were a team, you:</span>
+        <span v-if="isBP">If you were a team, you placed:</span>
       </div>
       <div class="db-flex-item db-flex-row" v-if="!isBP">
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Win</span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">Won</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Lose</span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">Lost</span>
         </div>
       </div>
       <div class="db-flex-item db-flex-row" v-if="isBP">
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Place 1<sup>st</sup></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">1<sup>st</sup></span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Place 2<sup>nd</sup></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">2<sup>nd</sup></span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Place 3<sup>rd</sup></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">3<sup>rd</sup></span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">Place 4<sup>th</sup></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">4<sup>th</sup></span>
         </div>
       </div>
     </div>
@@ -88,54 +117,52 @@
 
     <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
       <div class="db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
-        <div class="db-padding-horizontal">How would you rate<br> this adjudicator?</span></div>
+        <div class="db-padding-horizontal">This adjudicator should:</span></div>
       </div>
       <div class="db-flex-item db-flex-row">
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">1<br><small>should trainee</small></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">trainee</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">2<br><small>should panel</small></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">panel</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">3<br><small>should chair</small></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">chair</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">4<br><small>should judge outrounds</small></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">judge outrounds</span>
         </div>
-        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item-1 db-center-text db-vertical-center-text">
-          <span class="db-fill-in">5<br><small>should judge the grand final</small></span>
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">judge the grand final</span>
         </div>
       </div>
     </div>
 
   </section>
 
+  <section class="db-margins-m db-bordered db-flex-row db-flex-item-1" v-if="showFeedbackKeyWords">
 
-  <section class="db-margins-m db-bordered db-flex-row db-flex-item-6">
-
-    <div class="db-padding-horizontal db-flex-item-1 db-flex-column db-hide-overflow">
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhm db-align-vertical-center">
-        Any comments about <br>this adjudication?
+    <div class="db-padding-horizontal db-flex-item-1 db-flex-row">
+      <div class="db-align-vertical-center db-flex-item db-flex-static db-vertical-center-text">
+        <div class="db-padding-horizontal">This adjudicator was:</span></div>
       </div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
-      <div class="db-padding-horizontal db-fill-in db-flex-item db-flex-item-fhs"></div>
+      <div class="db-flex-item db-flex-row" v-for="keyword in feedbackKeywordsSplit">
+        <div class="db-align-horizontal-center db-align-vertical-center db-flex-item db-center-text db-vertical-center-text">
+          <span class="db-fill-in">[[ keyword.trim() ]]</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="db-margins-m db-bordered db-flex-row db-flex-item-20">
+
+    <div class="db-padding-horizontal db-flex-item-1 db-flex-column">
+      <div class="db-padding-horizontal db-flex-item db-flex-item-fhm db-align-vertical-center">
+        Any comments about this adjudicator?
+      </div>
+      <div class="db-padding-horizontal db-flex-item db-ruled-bg"></div>
+
     </div>
 
   </section>

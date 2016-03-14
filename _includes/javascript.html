@@ -28,7 +28,8 @@
       showFeedback: getLocalStorage('showFeedback', false),
       // Strings to Fill In
       tournamentName: getLocalStorage('tournamentName', "Tournament Name"),
-      returnLocation: getLocalStorage('returnLocation'," Tab Room Location"),
+      returnLocation: getLocalStorage('returnLocation', "Tab Room Location"),
+      feedbackKeywords: getLocalStorage('feedbackKeywords', "inattentive, uncritical, not fair to all teams, not approachable, not constructive, not comprehensive"),
       // Rules
       hasReplies: getLocalStorage('hasReplies', false),
       speakersCount: getLocalStorage('speakersCount', 3),
@@ -36,11 +37,17 @@
       infoText: getLocalStorage('infoText' , "Speeches are x minutes, the speaker score range is from x to x. You have x minutes to form an adjudication."),
       hasMotionSelection: getLocalStorage('hasMotionSelection', false),
       // Formatting
+      showFeedbackKeyWords: getLocalStorage('showFeedbackKeyWords', true),
       showTabRoomRow: getLocalStorage('showTabRoomRow', true),
       showInfoRow: getLocalStorage('showInfoRow', false),
       pageIsLandscape: getLocalStorage('pageIsLandscape', true),
       showPronouns: getLocalStorage('showPronouns', true),
       doubleUp: getLocalStorage('doubleUp', false),
+    },
+    computed: {
+      feedbackKeywordsSplit: function () {
+        return this.feedbackKeywords.split(',');
+      }
     },
     watch: {
       // Type
@@ -55,6 +62,7 @@
       'infoText': function (val, oldVal) { setLocalStorage('infoText' ,val) },
       'hasMotionSelection': function (val, oldVal) { setLocalStorage('hasMotionSelection', val) },
       // Formatting
+      'showFeedbackKeyWords': function (val, oldVal) { setLocalStorage('showFeedbackKeyWords', val) },
       'showTabRoomRow': function (val, oldVal) { setLocalStorage('showTabRoomRow', val) },
       'showInfoRow': function (val, oldVal) { setLocalStorage('showInfoRow', val) },
       'pageIsLandscape': function (val, oldVal) { setLocalStorage('pageIsLandscape', val) },

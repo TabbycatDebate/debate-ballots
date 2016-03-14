@@ -2,90 +2,13 @@
 .db-page-holder {
   display: flex; // Needed for contents
 }
-.db-hide-overflow {
-  overflow: hidden; // For the feedback comments line
-}
-.db-page-portrait {
-  transform: scale(0.5);
-  @media (min-height: 700px) {
-    transform: scale(0.58);
-  }
-  @media (min-height: 800px) {
-    transform: scale(0.68);
-  }
-  @media (min-height: 850px) {
-    transform: scale(0.73);
-  }
-  @media (min-height: 900px) {
-    transform: scale(0.8);
-  }
-  @media (min-height: 1000px) {
-    transform: scale(0.85);
-  }
-  @media (min-height: 1100px) {
-    transform: scale(0.9);
-  }
-  @media (min-height: 1200px) {
-    transform: scale(1.05);
-  }
-}
-.db-page-landscape {
-  transform: scale(0.5);
-  @media (min-width: 1000px) {
-    transform: scale(0.58);
-  }
-  @media (min-width: 1100px) {
-    transform: scale(0.65);
-  }
-  @media (min-width: 1200px) {
-    transform: scale(0.73);
-  }
-  @media (min-width: 1300px) {
-    transform: scale(0.83);
-  }
-  @media (min-width: 1400px) {
-    transform: scale(0.9);
-  }
-  @media (min-width: 1600px) {
-    transform: scale(1);
-  }
-  @media (min-width: 1800px) {
-    transform: scale(1.15);
-  }
-  @media (min-width: 2000px) {
-    transform: scale(1.3);
-  }
-  @media (min-width: 2200px) {
-    transform: scale(1.4);
-  }
-  @media (min-width: 2500px) {
-    transform: scale(1.5);
-  }
-}
 .db-page-portrait, {
   height: 297mm;
   width: 210mm;
-
-  &.db-page-single .db-score-sheet {
-    height: 100%;
-  }
-  &.db-page-double .db-score-sheet {
-    width: 100%;
-    height: 50%;
-  }
 }
 .db-page-landscape {
   width: 297mm;
   height: 210mm;
-
-  &.db-page-single .db-score-sheet {
-    height: 100%;
-  }
-  &.db-page-double .db-score-sheet {
-    width: 50%;
-    height: 100%;
-    float: left;
-  }
 }
 // PADDING
 .db-padding-horizontal {
@@ -93,6 +16,15 @@
 }
 .db-margins-m {
   margin: 0px 15px 15px 15px;
+}
+.db-page-double .db-margins-m {
+  margin: 0px 10px 10px 10px;
+}
+.db-item-gutter {
+  flex: 0 0 30px;
+}
+.db-page-double .db-item-gutter {
+  flex: 0 0 10px;
 }
 // ELEMENTS
 .db-flex-item {
@@ -126,15 +58,12 @@
 .db-flex-item-10 {
   flex: 10;
 }
+.db-flex-item-20 {
+  flex: 20;
+}
 .db-flex-item-half {
   flex: 50%;
   // border: 1px solid #ccc;
-}
-.db-item-gutter {
-  flex: 0 0 30px;
-}
-.db-page-double .db-item-gutter {
-  flex: 0 0 15px;
 }
 .db-flex-static {
   flex-grow: 0;
@@ -144,7 +73,7 @@
   flex: 0 0 20px;
 }
 .db-flex-item-fwm {
-  flex: 0 0 30px;
+  flex: 0 0 35px;
 }
 .db-flex-item-fwl {
   flex: 0 0 60px;
@@ -155,25 +84,12 @@
 .db-flex-item-fwxxl {
   flex: 0 0 200px;
 }
-.db-page-landscape {
-  .db-flex-item-fhs {
-    flex: 0 0 40px;
-  }
-  .db-flex-item-fhm {
-    flex: 0 0 60px;
-  }
-  .db-flex-item-fhl {
-    flex: 0 0 80px;
-  }
+.db-flex-item-fhs {
+  flex: 0 0 40px;
 }
-.db-page-portrait {
-  .db-flex-item-fhs {
-    flex: 0 0 40px;
-  }
-  .db-flex-item-fhm {
-    flex: 0 0 60px;
-  }
-  .db-flex-item-fhl {
-    flex: 0 0 80px;
-  }
+.db-flex-item-fhm {
+  flex: 0 0 60px;
+}
+.db-flex-item-fhl {
+  flex: 0 0 80px;
 }

@@ -4,6 +4,9 @@
     padding: 0;
     background: #fff;
   }
+  html {
+    height: auto;
+  }
   .db-page-holder {
     display: block;
   }
@@ -18,13 +21,7 @@
     right: 0;
     left: 0;
   }
-  .db-score-sheet {
-  }
-  .db-page-portrait .db-score-sheet {
-    width: auto;
-    height: auto;
-  }
-  .db-page-landscape .db-score-sheet {
+  .db-page-portrait, .db-page-landscape {
     width: auto;
     height: auto;
   }

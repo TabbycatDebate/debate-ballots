@@ -1,6 +1,6 @@
 <aside role="complementary" class="dbui-sidebar db-hide db-flex-column">
 
-  <div class="db-flex-item">
+  <div class="db-flex-static">
     <h4>Ballot Configuration</h4>
 
     <div class="form-block toggle-block db-flex-row">
@@ -15,10 +15,8 @@
     </div>
 
     <div class="form-block toggle-block db-flex-row">
-
       <button v-on:click="setPortrait" v-bind:class="{ 'active': !pageIsLandscape }" class="toggle-btn left">A4 Portrait</button>
       <button v-on:click="setLandscape" v-bind:class="{ 'active': pageIsLandscape }" class="toggle-btn right">A4 Landscape</button>
-
     </div>
 
     <div class="form-block db-flex-row">
@@ -41,6 +39,17 @@
 
     <template v-if="showFeedback" transition="expand">
 
+      <div class="form-block db-flex-row">
+        <div class="db-flex-item-1">
+          <input type="checkbox" id="showFeedbackKeyWordsText" v-model="showFeedbackKeyWords">
+          <label for="showFeedbackKeyWordsText">Show Keywords (seperate with commas)</label>
+        </div>
+      </div>
+
+      <div class="form-block db-flex-row" v-if="showFeedbackKeyWords">
+          <textarea class="db-flex-item-1" v-model="feedbackKeywords">[[ feedbackKeywords ]]</textarea>
+      </div>
+
     </template>
 
     <template v-if="!showFeedback" transition="expand">
@@ -49,12 +58,12 @@
 
         <div class="db-flex-item-1">
           <input type="checkbox" id="hasRepliesCheck" v-model="hasReplies">
-          <label for="hasRepliesCheck">Has Replies</label>
+          <label for="hasRepliesCheck">Reply Speeches</label>
         </div>
         <div class="divider"></div>
         <div class="db-flex-item-1">
           <input type="checkbox" id="hasMotionsCheck" v-model="hasMotionSelection">
-          <label for="hasMotionsCheck">Has Motion Options</label>
+          <label for="hasMotionsCheck">Motion Selection</label>
         </div>
 
       </div>
@@ -74,9 +83,7 @@
       </div>
 
       <div class="form-block db-flex-row" v-if="showInfo">
-
-        <textarea class="db-flex-item-1">[[ infoText ]]</textarea>
-
+        <textarea class="db-flex-item-1" v-model="infoText">[[ infoText ]]</textarea>
       </div>
 
     </template>
@@ -84,23 +91,36 @@
   </div>
 
   <div class="db-flex-static dbui-sidebar-section">
-    <h4>How to Print in <span class="db-safari-info">Safari</span>
-                        <span class="db-chrome-info">Chrome</span></h4>
-
-    <p>Use your browser's print function (File > Print) and set paper
-    size/orientations as needed.
-    <span class="db-safari-info">Ensure "Print backgrounds" is <strong>on</strong> and "Print headers and footers" is <strong>off</strong>.<span>
-    <span class="db-chrome-info">Under "More Settings" ensure "Margins" are <strong>None</strong>, "Simplify Page" is <strong>off</strong> and "Background graphics" is <strong>on</strong>.<span>
-
+    <h4>How to Print</h4>
+    <p class="db-notchrome-info">
+      <strong>For best results print from <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>.</strong> In other browsers margins and layouts may be off.</span>
+    </p>
+    <p>
+      <span class="db-safari-info">
+        Ensure "Print backgrounds" is <strong>on</strong> and "Print headers and footers" is <strong>off</strong>.</span>
+      <span class="db-firefox-info">
+        Use your browser's print function (File > Print) and set paper
+        size/orientations as desired. In the "Show Details" section set "Pages" to be from <strong>1 to 1</strong> and set "Print Background Colors" <strong>on</strong>. If possible reduce the default "Margins".</span>
+      <span class="db-chrome-info">
+        Use your browser's print function (File > Print) and set paper
+        size/orientations as desired. In the "More Settings" section ensure "Simplify Page" is <strong>off</strong> and "Background graphics" is <strong>on</strong>. You may also want to reduce the default "Margins".<span>
     </p>
   </div>
 
 
-  <div class="db-flex-static dbui-sidebar-section">
-    <p>Ad here</p>
+  <div class="db-flex-item db-align-vertical-center">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Sidebar Ad -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:300px;height:250px"
+         data-ad-client="ca-pub-4127280252237686"
+         data-ad-slot="3424227058"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 
-  <div class="db-flex-static dbui-sidebar-section">
+  <div class="db-flex-static">
 
     <p class="small">Created by <a target="_blank" href="http://philipbelesky.com/">Philip</a>.
     Feedback <a target="_blank" href="http://www.google.com/recaptcha/mailhide/d?k=01aItEbHtwnn1PzIPGGM9W8A==&c=XWljk2iGokfhziV2Rt4OiKA5uab1vCrnxwXcPUsWgnM=">

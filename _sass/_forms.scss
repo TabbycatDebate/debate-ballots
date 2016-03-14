@@ -5,7 +5,7 @@ input, button, textarea {
   border: 1px solid rgb(200,200,200);
   border-radius: 4px;
   display: inline-block;
-  padding: 5px 10px;
+  padding: 3px 10px;
   line-height: 1.5;
     text-align: center;
 }
@@ -22,6 +22,9 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+label {
+  line-height: 20px;
 }
 .toggle-block {
   border: 3px solid rgb(200,200,200);
@@ -48,9 +51,6 @@ button {
 
 .placeholder {
   color: #999;
-}
-label {
-  line-height: 35px;
 }
 .hidden {
   display: none;

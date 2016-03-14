@@ -1,7 +1,7 @@
 <script type="text/x-template" id="db-team-sheet">
 
   <div class="db-flex-item-2 db-flex-row db-bottom-border">
-    <div class="db-padding-horizontal db-flex-item db-align-vertical-center db-flex-static db-right-text">
+    <div class="db-padding-horizontal db-flex-item db-align-vertical-center db-flex-static">
       <template v-if="!isBP">
         <span v-if="n === 0">Affirmative:</span>
         <span v-if="n === 1">Negative:</span>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="db-flex-item-2 db-flex-row db-bottom-border  db-dont-fill-in"><!-- Keys -->
-    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
+    <div class="db-align-vertical-center  db-left-text" v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
     </div>
     <div v-show="showPronouns" class="db-align-vertical-center db-align-horizontal-center db-flex-item-fwl">
       Pronoun
@@ -31,8 +31,8 @@
     </div>
   </div>
 
-  <div class="db-flex-item-2 db-flex-row db-bottom-border" v-for="x in speakersCount"><!-- Speakers -->
-    <div class="db-align-vertical-center  db-left-text db-padding-horizontal" v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
+  <div class="db-flex-item-2 db-flex-row" v-for="x in speakersCount"><!-- Speakers -->
+    <div class="db-align-vertical-center db-right-text " v-bind:class="{ 'db-flex-item-fws': !isBP, 'db-flex-item-fwm': isBP }">
       <template v-if="!isBP">
         [[ x + 1 ]]
       </template>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="db-flex-item-2 db-flex-row db-bottom-border" v-show="hasReplies"><!-- Replies -->
-    <div class="db-align-vertical-center db-align-horizontal-end db-right-text db-flex-item-fws">
+    <div class="db-align-vertical-center db-right-text db-flex-item-fws">
       R.
     </div>
     <div class="db-padding-horizontal db-fill-in db-flex-item-fwl">
