@@ -1,5 +1,9 @@
 // OVERALL
 .db-page-holder {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex; // Needed for contents
 }
 .db-page-portrait, {
@@ -21,75 +25,139 @@
   margin: 0px 10px 10px 10px;
 }
 .db-item-gutter {
+	-webkit-flex: 0 0 30px;
+	-moz-flex: 0 0 30px;
+	-ms-flex: 0 0 30px;
   flex: 0 0 30px;
 }
 .db-page-double .db-item-gutter {
+	-webkit-flex: 0 0 10px;
+	-moz-flex: 0 0 10px;
+	-ms-flex: 0 0 10px;
   flex: 0 0 10px;
 }
 // ELEMENTS
 .db-flex-item {
+	-webkit-flex: auto;
+	-moz-flex: auto;
+	-ms-flex: auto;
   flex: auto;
-  // border: 1px solid #ccc;
 }
 .db-flex-item-1 {
+	-webkit-flex: 1;
+	-moz-flex: 1;
+	-ms-flex: 1;
   flex: 1;
 }
 .db-flex-item-2 {
+	-webkit-flex: 2;
+	-moz-flex: 2;
+	-ms-flex: 2;
   flex: 2;
 }
 .db-flex-item-3 {
+	-webkit-flex: 3;
+	-moz-flex: 3;
+	-ms-flex: 3;
   flex: 3;
 }
 .db-flex-item-4 {
+	-webkit-flex: 4;
+	-moz-flex: 4;
+	-ms-flex: 4;
   flex: 4;
 }
 .db-flex-item-5 {
+	-webkit-flex: 5;
+	-moz-flex: 5;
+	-ms-flex: 5;
   flex: 5;
 }
 .db-flex-item-6 {
+	-webkit-flex: 6;
+	-moz-flex:6;
+	-ms-flex: 6;
   flex: 6;
 }
 .db-flex-item-7 {
+	-webkit-flex: 7;
+	-moz-flex: 7;
+	-ms-flex: 7;
   flex: 7;
 }
 .db-flex-item-8 {
-  flex: 10;
+	-webkit-flex: 8;
+	-moz-flex: 8;
+	-ms-flex: 8;
+  flex: 8;
 }
 .db-flex-item-10 {
+	-webkit-flex: 10;
+	-moz-flex: 10;
+	-ms-flex: 10;
   flex: 10;
 }
 .db-flex-item-20 {
+	-webkit-flex: 20;
+	-moz-flex: 20;
+	-ms-flex: 20;
   flex: 20;
 }
 .db-flex-item-half {
+	-webkit-flex: 50%;
+	-moz-flex: 50%;
+	-ms-flex: 50%;
   flex: 50%;
-  // border: 1px solid #ccc;
 }
 .db-flex-static {
   flex-grow: 0;
   flex-shrink: 0;
 }
 .db-flex-item-fws {
+	-webkit-flex: 0 0 20px;
+	-moz-flex: 0 0 20px;
+	-ms-flex: 0 0 20px;
   flex: 0 0 20px;
 }
 .db-flex-item-fwm {
+	-webkit-flex: 0 0 35px;
+	-moz-flex: 0 0 35px;
+	-ms-flex: 0 0 35px;
   flex: 0 0 35px;
 }
 .db-flex-item-fwl {
+	-webkit-flex: 0 0 60px;
+	-moz-flex: 0 0 60px;
+	-ms-flex: 0 0 60px;
   flex: 0 0 60px;
 }
 .db-flex-item-fwxl {
+	-webkit-flex: 0 0 80px;
+	-moz-flex: 0 0 80px;
+	-ms-flex: 0 0 80px;
   flex: 0 0 80px;
 }
 .db-flex-item-fwxxl {
+	-webkit-flex: 0 0 200px;
+	-moz-flex: 0 0 200px;
+	-ms-flex: 0 0 200px;
   flex: 0 0 200px;
 }
 .db-flex-item-fhs {
+	-webkit-flex: 0 0 40px;
+	-moz-flex: 0 0 40px;
+	-ms-flex: 0 0 40px;
   flex: 0 0 40px;
 }
 .db-flex-item-fhm {
+	-webkit-flex: 0 0 60px;
+	-moz-flex: 0 0 60px;
+	-ms-flex: 0 0 60px;
   flex: 0 0 60px;
 }
 .db-flex-item-fhl {
+	-webkit-flex: 0 0 80px;
+	-moz-flex: 0 0 80px;
+	-ms-flex: 0 0 80px;
   flex: 0 0 80px;
 }
