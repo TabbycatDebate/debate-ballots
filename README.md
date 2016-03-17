@@ -2,6 +2,9 @@ Hello
 
 ## Installation
 
+    bundle install
+    bundle update
+
 Setup commands
 
     npm install http-server -g
