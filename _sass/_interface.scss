@@ -58,9 +58,12 @@ a {
 	-ms-justify-content: center;
   justify-content: center;
 }
-.db-safari-info, .db-chrome-info, .db-firefox-info, .chrome .db-notchrome-info {
+.db-safari-info, .db-chrome-info, .db-firefox-info, .chrome .db-notchrome-info, .db-old-ie-info {
   display: none;
 }
 .chrome .db-chrome-info, .safari .db-safari-info, .gecko .db-firefox-info {
   display: inline;
+}
+.db-old-browser-info {
+  display: block;
 }
