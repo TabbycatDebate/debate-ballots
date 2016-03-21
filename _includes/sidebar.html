@@ -11,7 +11,7 @@
 
     <div class="form-block toggle-block db-flex-row">
       <button v-on:click="setFeedbackFalse" v-bind:class="{ 'active': !showFeedback }" class="toggle-btn left">Score Sheet</button>
-      <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback }" class="toggle-btn right">Feedback Sheet</button>
+      <button v-on:click="setFeedbackTrue" v-bind:class="{ 'active': showFeedback }" class="toggle-btn right">Feedback Form</button>
       <input class="hidden" type="checkbox" id="showFeedbackCheck" v-model="showFeedback">
     </div>
 
@@ -26,9 +26,9 @@
     </div>
 
     <div class="form-block db-flex-row">
-      <input type="text" class="side-by-side" id="tournamentNameText" v-bind:class="{ 'placeholder': tournamentName === 'Tournament Name' }" v-model="tournamentName">
+      <input type="text" class="side-by-side" id="tournamentNameText" v-model="tournamentName" placeholder="Tournament Name">
       <div class="divider"></div>
-      <input type="text" class="side-by-side" id="returnLocationText" v-bind:class="{ 'placeholder': returnLocation === 'Tab Room Location' }" v-model="returnLocation">
+      <input type="text" class="side-by-side" id="returnLocationText" v-model="returnLocation" placeholder="Tab Room Location">
     </div>
 
     <div class="form-block db-flex-row">
