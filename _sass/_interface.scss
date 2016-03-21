@@ -58,7 +58,7 @@ a {
 	-ms-justify-content: center;
   justify-content: center;
 }
-.db-safari-info, .db-chrome-info, .db-firefox-info, .chrome .db-notchrome-info, .db-old-ie-info {
+.db-safari-info, .db-chrome-info, .db-firefox-info, .chrome .db-notchrome-info, .db-old-ie-info, .db-mobile-info, h4.db-mobile-info {
   display: none;
 }
 .chrome .db-chrome-info, .safari .db-safari-info, .gecko .db-firefox-info {
@@ -66,4 +66,14 @@ a {
 }
 .db-old-browser-info {
   display: block;
+}
+@media (max-width: 420px) and (max-height: 740px) { // Phones Portrait
+  .db-mobile-info, h4.db-mobile-info {
+    display: block;
+  }
+}
+@media (max-width: 740px) and (max-height: 420px) { // Phones Portrait
+  .db-mobile-info, h4.db-mobile-info {
+    display: block;
+  }
 }

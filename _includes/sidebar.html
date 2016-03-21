@@ -1,6 +1,12 @@
 <aside role="complementary" class="dbui-sidebar db-hide db-flex-column">
 
   <div class="db-flex-static">
+
+    <h4 class="db-mobile-info">Note to Mobile Users</h4>
+    <p class="db-mobile-info">Sorry, this website really needs a browser or tablet interface for
+      the layout to work well!</p>
+    <br class="db-mobile-info">
+
     <h4>Ballot Configuration</h4>
 
     <div class="form-block toggle-block db-flex-row">
@@ -78,6 +84,20 @@
         <div class="db-flex-item-1">
           <input type="checkbox" id="showPronounsCheck" v-model="showPronouns">
           <label for="showPronounsCheck">Show Pronouns</label>
+        </div>
+
+      </div>
+
+      <div class="form-block db-flex-row">
+
+        <div class="db-flex-item-1">
+          <input type="radio" id="one" value="2" number v-model="speakersCount">
+          <label for="one">2 Speakers per Team</label>
+        </div>
+        <div class="divider"></div>
+        <div class="db-flex-item-1">
+          <input type="radio" id="two" value="3" number v-model="speakersCount">
+          <label for="two">3 Speakers per Team</label>
         </div>
 
       </div>

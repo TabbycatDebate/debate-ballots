@@ -1,6 +1,18 @@
 
 .db-page-portrait {
   transform: scale(0.5);
+  @media (min-height: 350px) {
+    transform: scale(0.30);
+  }
+  @media (min-height: 400px) {
+    transform: scale(0.35);
+  }
+  @media (min-height: 500px) {
+    transform: scale(0.38);
+  }
+  @media (min-height: 600px) {
+    transform: scale(0.48);
+  }
   @media (min-height: 700px) {
     transform: scale(0.58);
   }
@@ -25,6 +37,15 @@
 }
 .db-page-landscape {
   transform: scale(0.5);
+  @media (min-width: 300px) {
+    transform: scale(0.18); // iPad Portrait
+  }
+  @media (min-width: 350px) {
+    transform: scale(0.25); // iPad Portrait
+  }
+  @media (min-width: 700px) and (min-height: 470px) {
+    transform: scale(0.35); // iPad Portrait
+  }
   @media (min-width: 1000px) and (min-height: 470px) {
     transform: scale(0.50);
   }
