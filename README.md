@@ -10,4 +10,4 @@ A web-interface for generating ballot templates that can be printed straight fro
 
 Running commands
 
-    jekyll serve
+    grunt

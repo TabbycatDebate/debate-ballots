@@ -1,8 +1,14 @@
 sass:
   style: compressed
 
-exclude: [
-  "README.md",
-  "bower.json",
-  "s3_website.yml",
-]
+exclude:
+  - README.md
+  - bower.json
+  - Gemfile
+  - bower_components
+  - node_modules
+  - Gruntfile.coffee
+
+
+baseurl: "/ballots"
+url: "http://philipbelesky.github.io"

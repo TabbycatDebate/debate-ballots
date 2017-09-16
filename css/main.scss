@@ -3,16 +3,11 @@
 ---
 @charset "utf-8";
 
-// VARIABLES
-$lato-font-path: '../bower_components/lato/font';
-
 // NORMALIZE
-@import "../bower_components/normalize-scss/sass/normalize/normalize-mixin";
-@import "../bower_components/normalize-scss/sass/normalize/variables";
-@import "../bower_components/normalize-scss/sass/normalize/vertical-rhythm";
+@import "../vendor/normalize-mixin";
+@import "../vendor/variables";
+@import "../vendor/vertical-rhythm";
 @include normalize();
-@import "../bower_components/lato/scss/lato";
-
 
 // Stuff related to this website
 @import
@@ -29,3 +24,7 @@ $lato-font-path: '../bower_components/lato/font';
   "db/responsive",
   "db/print"
 ;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "ballots",
+  "version": "1.0.0",
+  "description": "A web-interface for generating ballot templates that can be printed straight from the browser. This is no longer actively developed.",
+  "main": "css_browser_selector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipbelesky/ballots.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/philipbelesky/ballots/issues"
+  },
+  "homepage": "https://github.com/philipbelesky/ballots#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-task": "^0.5.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^3.0.0"
+  }
+}

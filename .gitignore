@@ -3,4 +3,5 @@
 .sass-cache/
 vue.js
 bower_components/
+node_modules/
 _site/
