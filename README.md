@@ -1,23 +1,13 @@
-Hello
+
+A web-interface for generating ballot templates that can be printed straight from the browser. This is no longer actively developed.
 
 ## Installation
 
     bundle install
     bundle update
 
-Setup commands
-
-    npm install http-server -g
-    bower install
-
 ## Serving
 
 Running commands
 
-    http-server .
-    sass --watch style.scss:style.css
-    livereload .
-
-## Deployment
-
-    s3_website push
+    jekyll serve
