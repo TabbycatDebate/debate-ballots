@@ -10,5 +10,5 @@ exclude:
   - Gruntfile.coffee
 
 
-baseurl: "/ballots"
-url: "http://philipbelesky.github.io"
+baseurl: "/debate-ballots"
+url: "http://tabbycat-debate.github.io"

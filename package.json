@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/philipbelesky/ballots.git"
+    "url": "git+https://github.com/Tabbycat-Debate/debate-ballots.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/philipbelesky/ballots/issues"
+    "url": "https://github.com/Tabbycat-Debate/debate-ballots/issues"
   },
-  "homepage": "https://github.com/philipbelesky/ballots#readme",
+  "homepage": "https://github.com/Tabbycat-Debate/debate-ballots#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-bower-task": "^0.5.0",
